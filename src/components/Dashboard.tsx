@@ -1,0 +1,86 @@
+import { createSignal, type Component } from 'solid-js';
+import Header from './Header';
+import CenterPanel from './CenterPanel';
+import SidePanel from './SidePanel';
+import './Dashboard.css';
+
+const Dashboard: Component = () => {
+  const [currentView, setCurrentView] = createSignal('home');
+
+  return (
+    <div class="dashboard-container">
+      <Header currentView={currentView()} setView={setCurrentView} />
+      
+      <div class="dashboard-grid">
+        <SidePanel title="LANGUAGES" className="left-panel">
+          <ul class="retro-list">
+            <li><span class="icon">JS</span> JavaScript</li>
+            <li><span class="icon">TS</span> TypeScript</li>
+            <li><span class="icon">PY</span> Python</li>
+            <li><span class="icon">PHP</span> PHP</li>
+            <li><span class="icon">GO</span> GoLang</li>
+            <li><span class="icon">SQL</span> MySQL</li>
+            <li><span class="icon">MD</span> Markdown</li>
+            <li><span class="icon">SH</span> Bash</li>
+            <li><span class="icon">C</span> C</li>
+            <li><span class="icon">CPP</span> C++</li>
+          </ul>
+          
+          <div class="section-divider"></div>
+          
+          <div class="panel-header-small">System Status</div>
+          <div class="status-row">
+            <span>CPU:</span> <span class="text-term">i7-8665U</span>
+          </div>
+          <div class="status-row">
+            <span>MEM:</span> <span>16GB</span>
+          </div>
+          <div class="status-row">
+            <span>SYS:</span> <span>UBUNTU 25.10</span>
+          </div>
+        </SidePanel>
+        
+        <div class="center-wrapper">
+          <CenterPanel view={currentView()} />
+          <div class="terminal-output">
+            <p>&gt; _INITIATING PORTFOLIO SEQUENCE...</p>
+            <p>&gt; _LOADING ASSETS... [OK]</p>
+            <p>&gt; _ESTABLISHING CONNECTION... [OK]</p>
+            <p class="blink-cursor">&gt; _READY</p>
+          </div>
+        </div>
+        
+        <SidePanel title="FRAMEWORKS" className="right-panel">
+          <div class="panel-header-small">FULLSTACK</div>
+          <ul class="retro-list">
+             <li><span class="icon">NXT</span> Next.js</li>
+             <li><span class="icon">INR</span> Inertia.js</li>
+          </ul>
+
+          <div class="section-divider"></div>
+
+          <div class="panel-header-small">FRONTEND</div>
+          <ul class="retro-list">
+             <li><span class="icon">RE</span> React</li>
+             <li><span class="icon">VU</span> Vue</li>
+
+          </ul>
+          
+          <div class="section-divider"></div>
+
+          <div class="panel-header-small">BACKEND</div>
+          <ul class="retro-list">
+             <li><span class="icon">LVR</span> Laravel</li>
+             <li><span class="icon">GIN</span> Gin</li>
+             <li><span class="icon">EXP</span> Express</li>
+             <li><span class="icon">NST</span> NestJS</li>
+          </ul>
+          
+
+        </SidePanel>
+      </div>
+    </div>
+  );
+};
+
+export default Dashboard;

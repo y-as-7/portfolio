@@ -1,0 +1,145 @@
+
+
+:root {
+  --color-bg: #050505;
+  --color-term: #33ff00;
+  --color-term-dim: #1a8000;
+  --color-accent: #00ffff;
+  --color-text: #e0e0e0;
+  --color-panel-bg: #000000;
+  --color-panel-border: #ffffff;
+
+  --font-header: "Press Start 2P", cursive;
+  --font-body: "VT323", monospace;
+
+  --scanline-color: rgba(18, 16, 16, 0.233);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-bg);
+  color: var(--color-term);
+  font-family: var(--font-body);
+  font-size: 1.2rem;
+  overflow-y: auto; /* Allow vertical scrolling */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  -webkit-font-smoothing: none; /* Pixel perfect crispness */
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-term-dim);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-term);
+}
+
+/* CRT Scanline Effect */
+.scanlines {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0) 50%,
+    rgba(0, 0, 0, 0.2) 50%,
+    rgba(0, 0, 0, 0.2)
+  );
+  background-size: 100% 4px;
+  z-index: 9999;
+  animation: scroll 10s linear infinite;
+}
+
+.crt-flicker {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  opacity: 0.05;
+  background: white;
+  z-index: 9998;
+  animation: flicker 0.15s infinite;
+}
+
+@keyframes scroll {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 100%;
+  }
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 0.05;
+  }
+  50% {
+    opacity: 0.02;
+  }
+  100% {
+    opacity: 0.05;
+  }
+}
+
+/* Utility Classes */
+.font-header {
+  font-family: var(--font-header);
+}
+.font-body {
+  font-family: var(--font-body);
+}
+.text-term {
+  color: var(--color-term);
+}
+.text-accent {
+  color: var(--color-accent);
+}
+
+/* Starfield Background (Fallback if canvas fails) */
+.starfield {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-image: radial-gradient(
+      2px 2px at 20px 30px,
+      #eee,
+      rgba(0, 0, 0, 0)
+    ),
+    radial-gradient(2px 2px at 40px 70px, #fff, rgba(0, 0, 0, 0)),
+    radial-gradient(2px 2px at 50px 160px, #ddd, rgba(0, 0, 0, 0)),
+    radial-gradient(2px 2px at 90px 40px, #fff, rgba(0, 0, 0, 0)),
+    radial-gradient(2px 2px at 130px 80px, #fff, rgba(0, 0, 0, 0));
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  animation: stars 4s linear infinite;
+}
+
+@keyframes stars {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(0, -200px, 0);
+  }
+}
