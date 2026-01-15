@@ -1,4 +1,4 @@
-import { createSignal, type Component, For, onMount } from 'solid-js';
+import { createSignal, type Component, For } from 'solid-js';
 import Header from './Header';
 import CenterPanel from './CenterPanel';
 import SidePanel from './SidePanel';
@@ -11,7 +11,7 @@ const Dashboard: Component = () => {
     '> _INITIATING PORTFOLIO SEQUENCE...',
     '> _LOADING ASSETS... [OK]',
     '> _ESTABLISHING CONNECTION... [OK]',
-    '>TYPE "HELP" FOR COMMANDS'
+    '>TYPE "help" FOR COMMANDS'
   ]);
   
   const handleCommand = () => {
@@ -40,6 +40,9 @@ const Dashboard: Component = () => {
         setCurrentView('contact');
         break;
       case 'about':
+        newHistory.push('> ACCESSING BIO DATA...');
+        setCurrentView('about');
+        break;
       case 'home':
         newHistory.push('> RETURNING TO BASE...');
         setCurrentView('home');
@@ -99,7 +102,7 @@ const Dashboard: Component = () => {
         </SidePanel>
         
         <div class="center-wrapper">
-          <CenterPanel view={currentView()} />
+          <CenterPanel view={currentView()} setView={setCurrentView} />
           <div class="terminal-output" onClick={() => document.getElementById('term-input')?.focus()}>
             <For each={terminalHistory()}>
               {(line) => <p class="term-line">{line}</p>}

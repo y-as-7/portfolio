@@ -19,7 +19,7 @@ const Header: Component<HeaderProps> = (props) => {
       </div>
       
       <nav class="header-right">
-        <a href="#about" class="retro-btn" onClick={(e) => { e.preventDefault(); props.setView('home'); }}>ABOUT</a>
+        <a href="#about" class="retro-btn" onClick={(e) => { e.preventDefault(); props.setView('about'); }}>ABOUT</a>
         <a href="#contact" class="retro-btn" onClick={(e) => { e.preventDefault(); props.setView('contact'); }}>CONTACT</a>
       </nav>
     </header>

@@ -1,8 +1,9 @@
-import { createSignal, type Component } from 'solid-js';
+import { createSignal, createEffect, type Component } from 'solid-js';
 import './CenterPanel.css';
 
 interface CenterPanelProps {
   view?: string;
+  setView?: (view: string) => void;
 }
 
 const CenterPanel: Component<CenterPanelProps> = (props) => {
@@ -10,20 +11,30 @@ const CenterPanel: Component<CenterPanelProps> = (props) => {
   
   const isContact = () => props.view === 'contact';
   const isProjects = () => props.view === 'projects';
+  const isAbout = () => props.view === 'about';
   
   const [activeModule, setActiveModule] = createSignal<string | null>(null);
+  
+  createEffect(() => {
+    if (props.view === 'about') {
+      setIsPlaying(false);
+      setActiveModule(null);
+    }
+  });
 
   const getModuleData = (mod: string) => {
     switch(mod) {
       case 'MISSIONS': return [
-         { title: 'SENIOR ENG.', subtitle: 'TECH CORP B', desc: '2023 - PRESENT // LEAD ARCHITECT' },
-         { title: 'FULL STACK DEV', subtitle: 'STARTUP A', desc: '2021 - 2023 // CORE SYSTEMS' },
-         { title: 'FREELANCE', subtitle: 'VARIOUS', desc: '2019 - 2021 // WEB SOLUTIONS' }
+         { title: 'MANAGER & LEAD', subtitle: 'REYADA CAPITAL', desc: 'DIRECT MANAGER & TEAM LEAD' },
+         { title: 'TEAM LEAD', subtitle: 'TBS', desc: 'SOFTWARE TEAM LEAD' },
+         { title: 'BACKEND DEV', subtitle: 'RIZME SOFTWARE', desc: 'BACKEND DEVELOPER' },
+         { title: 'FREELANCE', subtitle: 'VARIOUS', desc: 'WEB & DESKTOP SOLUTIONS' }
       ];
       case 'SERVICES': return [
          { title: 'WEB DEVELOPMENT', subtitle: 'FULL STACK', desc: 'MODERN APPS & SYSTEMS' },
          { title: 'UI / UX DESIGN', subtitle: 'INTERACTIVE', desc: 'RETRO & MODERN AESTHETICS' },
-         { title: 'OPTIMIZATION', subtitle: 'PERFORMANCE', desc: 'SEO & SPEED TUNING' }
+         { title: 'OPTIMIZATION', subtitle: 'PERFORMANCE', desc: 'SEO & SPEED TUNING' },
+         { title: 'TECH CONSULTING', subtitle: 'BUSINESS', desc: 'REQ. ANALYSIS & CLIENT COMMS' }
       ];
       case 'TROPHIES': return [
          { title: 'HACKATHON 2024', subtitle: '1ST PLACE', desc: 'BEST INNOVATION AWARD' },
@@ -34,29 +45,7 @@ const CenterPanel: Component<CenterPanelProps> = (props) => {
     }
   };
 
-  const projects = [
-    {
-      id: 1,
-      title: 'PORTFOLIO_V1',
-      desc: '// The current retro-themed site.\n// Built with SolidJS & Vite.',
-      tech: ['SOLID', 'TS', 'CSS'],
-      link: '#'
-    },
-    {
-      id: 2,
-      title: 'AI_ASSISTANT',
-      desc: '// Neural network chat interface.\n// Powered by LLM Integration.',
-      tech: ['PYTHON', 'PYTORCH', 'REACT'],
-      link: '#'
-    },
-    {
-      id: 3,
-      title: 'ECOMMERCE_BOT',
-      desc: '// Automated trading bot.\n// High-frequency algo.',
-      tech: ['GO', 'SQL', 'DOCKER'],
-      link: '#'
-    }
-  ];
+
 
   return (
     <div class="center-panel">
@@ -65,14 +54,7 @@ const CenterPanel: Component<CenterPanelProps> = (props) => {
         <span>{isContact() ? 'STATUS: ONLINE' : isProjects() ? 'SELECT TARGET' : 'HIGH SCORE: 99999'}</span>
       </div>
       <div class="game-viewport">
-        <div class="sky-gradient"></div>
-        <div class="ground-layer">
-          {!isPlaying() && !isContact() && !isProjects() && (
-             <div class="copyright-text">
-               © 2026 YOUSSEF ASKAR - LICENSED BY NINTENDO
-             </div>
-          )}
-        </div>
+        {/* Sky and Ground layers removed for pure black data terminal look */}
         
         {isContact() ? (
            <div class="start-screen-overlay">
@@ -93,6 +75,39 @@ const CenterPanel: Component<CenterPanelProps> = (props) => {
                 <button type="submit" class="game-btn blinking">SEND MESSAGE</button>
               </form>
            </div>
+        ) : isAbout() ? (
+          <div class="start-screen-overlay about-overlay">
+             <h1 class="game-title">PLAYER PROFILE</h1>
+             <div class="about-container">
+               <div class="about-section">
+                  <h3>&gt; IDENTITY:</h3>
+                  <p>YOUSSEF ASKAR // SOFTWARE ENGINEER</p>
+               </div>
+               <div class="about-section">
+                  <h3>&gt; SKILLS:</h3>
+                  <p>WEB (FRONT/BACK) . DEVOPS . DESKTOP APPS</p>
+               </div>
+               <div class="about-section">
+                  <h3>&gt; CAREER LOG:</h3>
+                  <p>STARTED: FREELANCE MERCENARY</p>
+                  <p>JOINED: RIZME SOFTWARE (BACKEND DEV)</p>
+                  <p>LEVELED UP: TBS (TEAM LEAD)</p>
+                  <p>MAXIMIZED: REYADA CAPITAL (DIRECT MANAGER)</p>
+               </div>
+               <div class="about-section highlight">
+                  <h3>&gt; MISSION FOCUS:</h3>
+                  <p>BRIDGING TECH & BUSINESS. EXPERT IN REQUIREMENTS ANALYSIS & CLIENT RELATIONS.</p>
+               </div>
+               <div class="about-section">
+                  <h3>&gt; COMS:</h3>
+                  <div class="about-links">
+                    <a href="https://www.linkedin.com/in/youssef-askar-638531154/" target="_blank" class="game-btn" style="font-size: 0.7rem; display: inline-block; margin-right: 1rem;">LINKEDIN</a>
+                    <a href="https://github.com/y-as-7" target="_blank" class="game-btn" style="font-size: 0.7rem; display: inline-block;">GITHUB</a>
+                  </div>
+               </div>
+               <button class="game-btn blinking" onClick={() => props.setView?.('home')} style="margin-top: 1rem; align-self: flex-start; font-size: 0.8rem;">&lt; RETURN TO BASE</button>
+             </div>
+          </div>
         ) : isProjects() ? (
           <div class="start-screen-overlay projects-overlay">
              <h1 class="game-title">MISSION SELECT</h1>
@@ -115,9 +130,9 @@ const CenterPanel: Component<CenterPanelProps> = (props) => {
              <h1 class="game-title">CODE WARRIOR</h1>
              
              <div class="retro-bio">
-               <p class="type-line-1">FULL STACK DEVELOPER</p>
-               <p class="type-line-2">SPECIALIZED IN WEB TECH.</p>
-               <p class="type-line-3">MISSION: BUILD THE FUTURE</p>
+               <p class="type-line-1">SOFTWARE ENGINEER</p>
+               <p class="type-line-2">WEB . BACKEND . DEVOPS</p>
+               <p class="type-line-3">TECH & BUSINESS SOLUTIONS</p>
              </div>
 
              <div class="menu-selection">

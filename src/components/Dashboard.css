@@ -106,6 +106,10 @@
     /* max-height: 300px; */ 
     height: auto; /* Allow auto height on mobile so lists don't scroll unnecessarily inside small boxes */
   }
+
+  .center-wrapper {
+    order: -1;
+  }
 }
 
 /* CLI Input Styles */
