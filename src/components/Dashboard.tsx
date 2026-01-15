@@ -1,4 +1,4 @@
-import { createSignal, type Component } from 'solid-js';
+import { createSignal, type Component, For, onMount } from 'solid-js';
 import Header from './Header';
 import CenterPanel from './CenterPanel';
 import SidePanel from './SidePanel';
@@ -6,6 +6,64 @@ import './Dashboard.css';
 
 const Dashboard: Component = () => {
   const [currentView, setCurrentView] = createSignal('home');
+  const [termInput, setTermInput] = createSignal('');
+  const [terminalHistory, setTerminalHistory] = createSignal<string[]>([
+    '> _INITIATING PORTFOLIO SEQUENCE...',
+    '> _LOADING ASSETS... [OK]',
+    '> _ESTABLISHING CONNECTION... [OK]',
+    '>TYPE "HELP" FOR COMMANDS'
+  ]);
+  
+  const handleCommand = () => {
+    const cmd = termInput().trim().toLowerCase();
+    if (!cmd) return;
+    
+    const newHistory = [...terminalHistory(), `> ${termInput()}`];
+    
+    switch (cmd) {
+      case 'help':
+        newHistory.push(
+          '> AVAILABLE COMMANDS:',
+          '>  - projects: VIEW PROJECTS',
+          '>  - contact: OPEN COMM LINK',
+          '>  - about: SYSTEM INFO',
+          '>  - clear: CLEAR TERMINAL',
+          '>  - whoami: IDENTIFY USER'
+        );
+        break;
+      case 'projects':
+        newHistory.push('> LAUNCHING MISSION SELECT...');
+        setCurrentView('projects');
+        break;
+      case 'contact':
+        newHistory.push('> OPENING SECURE CHANNEL...');
+        setCurrentView('contact');
+        break;
+      case 'about':
+      case 'home':
+        newHistory.push('> RETURNING TO BASE...');
+        setCurrentView('home');
+        break;
+      case 'clear':
+        setTerminalHistory(['> _TERMINAL CLEARED']);
+        setTermInput('');
+        return;
+      case 'whoami':
+        newHistory.push('> GUEST USER DETECTED', '> ACCESS LEVEL: RESTRICTED');
+        break;
+      default:
+        newHistory.push(`> ERROR: COMMAND "${cmd}" NOT RECOGNIZED`);
+    }
+    
+    setTerminalHistory(newHistory);
+    setTermInput('');
+    
+    // Auto scroll to bottom
+    setTimeout(() => {
+       const term = document.querySelector('.terminal-output');
+       if (term) term.scrollTop = term.scrollHeight;
+    }, 10);
+  };
 
   return (
     <div class="dashboard-container">
@@ -42,11 +100,25 @@ const Dashboard: Component = () => {
         
         <div class="center-wrapper">
           <CenterPanel view={currentView()} />
-          <div class="terminal-output">
-            <p>&gt; _INITIATING PORTFOLIO SEQUENCE...</p>
-            <p>&gt; _LOADING ASSETS... [OK]</p>
-            <p>&gt; _ESTABLISHING CONNECTION... [OK]</p>
-            <p class="blink-cursor">&gt; _READY</p>
+          <div class="terminal-output" onClick={() => document.getElementById('term-input')?.focus()}>
+            <For each={terminalHistory()}>
+              {(line) => <p class="term-line">{line}</p>}
+            </For>
+            <div class="input-line">
+              <span class="prompt">&gt;</span>
+              <input
+                id="term-input"
+                type="text"
+                class="term-input"
+                value={termInput()}
+                onInput={(e) => setTermInput(e.currentTarget.value)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter') handleCommand();
+                }}
+                autocomplete="off"
+                spellcheck={false}
+              />
+            </div>
           </div>
         </div>
         

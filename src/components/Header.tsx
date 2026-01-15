@@ -11,7 +11,7 @@ const Header: Component<HeaderProps> = (props) => {
     <header class="retro-header">
       <nav class="header-left">
         <a href="#projects" class="retro-btn" onClick={(e) => { e.preventDefault(); props.setView('projects'); }}>PROJECTS</a>
-        <a href="https://github.com" target="_blank" class="retro-btn">GITHUB</a>
+        <a href="https://github.com/y-as-7" target="_blank" class="retro-btn">GITHUB</a>
       </nav>
       
       <div class="header-center">

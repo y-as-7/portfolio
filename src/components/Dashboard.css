@@ -107,3 +107,33 @@
     height: auto; /* Allow auto height on mobile so lists don't scroll unnecessarily inside small boxes */
   }
 }
+
+/* CLI Input Styles */
+.input-line {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.term-input {
+  background: transparent;
+  border: none;
+  font-family: var(--font-body); /* VT323 */
+  font-size: 1rem;
+  color: #33ff00;
+  width: 100%;
+  outline: none;
+  caret-color: #33ff00;
+  line-height: 1.2;
+}
+
+.term-line {
+  margin: 0.1rem 0;
+  line-height: 1.2;
+  word-break: break-all;
+}
+
+.prompt {
+  color: #33ff00;
+  animation: blink 1s step-end infinite;
+}
