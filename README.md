@@ -1,3 +1,5 @@
+![Portfolio Preview](public/image.png)
+
 ## Usage
 
 ```bash
