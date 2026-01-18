@@ -85,7 +85,7 @@ const CenterPanel: Component<CenterPanelProps> = (props) => {
                </div>
                <div class="about-section">
                   <h3>&gt; SKILLS:</h3>
-                  <p>WEB (FRONT/BACK) . DEVOPS . DESKTOP APPS</p>
+                  <p>WEB (FRONT/BACK) . DEVOPS . DESKTOP APPS . ELECTRON</p>
                </div>
                <div class="about-section">
                   <h3>&gt; CAREER LOG:</h3>
