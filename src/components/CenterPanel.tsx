@@ -129,18 +129,16 @@ const CenterPanel: Component<CenterPanelProps> = (props) => {
           <div class="start-screen-overlay">
              <h1 class="game-title">CODE WARRIOR</h1>
              
-             <div class="retro-bio">
+             <div class="bio-box">
                <p class="type-line-1">SOFTWARE ENGINEER</p>
                <p class="type-line-2">WEB . BACKEND . DEVOPS</p>
+               <div class="scan-line-decor"></div>
                <p class="type-line-3">TECH & BUSINESS SOLUTIONS</p>
              </div>
 
              <div class="menu-selection">
-                <button class="game-btn blinking" onClick={() => setIsPlaying(true)}>
-                  ▶ START GAME
-                </button>
-                <button class="game-btn disabled">
-                  OPTIONS
+                <button class="press-start-btn blinking" onClick={() => setIsPlaying(true)}>
+                  PRESS START
                 </button>
              </div>
              

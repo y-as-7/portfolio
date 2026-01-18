@@ -17,6 +17,18 @@
   justify-content: space-between;
 }
 
+@media (max-width: 768px) {
+  .game-screen-bar {
+    font-size: 0.6rem;
+    padding: 0.4rem;
+  }
+  
+  .game-title {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+}
+
 .game-viewport {
   position: relative;
   flex-grow: 1;
@@ -75,6 +87,8 @@
   text-shadow: 4px 4px 0 #fff;
   margin-bottom: 0.5rem; /* Reduced from 2rem */
   animation: float 2s ease-in-out infinite;
+  text-align: center;
+  width: 100%;
 }
 
 
@@ -280,6 +294,49 @@
   animation: typing 2s steps(30, end) forwards, blink-caret 0.75s step-end infinite;
 }
 
+.retro-bio {
+  /* Deprecated in favor of bio-box, keeping for safely if needed elsewhere, 
+     but overriding for new layout */
+  display: none; 
+}
+
+.bio-box {
+  border: 4px double #33ff00;
+  padding: 1.5rem 3rem;
+  text-align: center;
+  margin: 2rem 0;
+  background: rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0 15px rgba(51, 255, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.scan-line-decor {
+  height: 2px;
+  background: #33ff00;
+  width: 100%;
+  margin: 0.5rem 0;
+  opacity: 0.5;
+}
+
+.press-start-btn {
+  background: transparent;
+  border: none;
+  font-family: var(--font-header);
+  font-size: 1.5rem;
+  color: #33ff00;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  animation: blink 1.5s steps(2, start) infinite;
+  margin-top: 2rem;
+}
+
+.press-start-btn:hover {
+  text-shadow: 0 0 10px #33ff00;
+  transform: scale(1.1);
+}
 .type-line-1 { animation-delay: 0s; width: 0; animation-fill-mode: forwards; }
 .type-line-2 { animation-delay: 2s; width: 0; animation-fill-mode: forwards; border-right: none; }
 .type-line-3 { animation-delay: 4s; width: 0; animation-fill-mode: forwards; border-right: none; }
@@ -306,10 +363,16 @@
 }
 
 @media (max-width: 768px) {
-  .retro-bio {
-    font-size: 0.9rem;
-    padding: 0.5rem;
-    min-width: 90%;
+  .bio-box {
+    width: 95%;
+    font-size: 0.8rem;
+    padding: 1rem;
+    margin: 1rem 0;
+  }
+  
+  .press-start-btn {
+    font-size:  1rem;
+    margin-top: 1rem;
   }
 }
 
