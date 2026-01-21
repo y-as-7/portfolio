@@ -232,19 +232,19 @@
 }
 @media (max-width: 768px) {
   .start-screen-overlay {
-    position: relative; /* Changed from absolute to flow naturally */
+    position: relative;
     height: auto;
-    min-height: 400px;
-    justify-content: flex-start;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    min-height: 250px; /* Reduced further from 400px */
+    justify-content: center; /* Center content vertically if possible */
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     overflow-y: visible !important; 
     pointer-events: auto !important;
   }
   
   .game-viewport {
     height: auto;
-    min-height: 400px;
+    min-height: 250px; /* Reduced further from 400px */
     overflow: visible;
   }
 
@@ -391,14 +391,14 @@
   .bio-box {
     width: 95%;
     font-size: 0.8rem;
-    padding: 1rem;
-    margin: 1rem 0 2rem 0; /* Add bottom margin */
-    flex-shrink: 0; /* Ensure it doesn't shrink */
+    padding: 0.8rem;
+    margin: 0.5rem 0 1rem 0; /* Tighter margins */
+    flex-shrink: 0;
   }
   
   .press-start-btn {
-    font-size:  1rem;
-    margin-top: 1rem;
+    font-size: 1rem;
+    margin-top: 0.5rem;
   }
 }
 

@@ -21,6 +21,22 @@
     overflow-y: auto;
     overflow-x: hidden;
   }
+  
+  .dashboard-grid {
+    gap: 0;
+  }
+
+  .retro-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    padding: 0 0.5rem;
+  }
+  
+  .retro-list li {
+    font-size: 0.9rem;
+    border-bottom: 1px dashed #222;
+  }
 }
 
 .dashboard-grid {
