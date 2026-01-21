@@ -275,7 +275,7 @@ const CenterPanel: Component<CenterPanelProps> = (props) => {
 
             <div class="menu-selection">
               <button
-                class="press-start-btn blinking"
+                class="press-start-btn"
                 onClick={() => setIsPlaying(true)}
               >
                 PRESS START

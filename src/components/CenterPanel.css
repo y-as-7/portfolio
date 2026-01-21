@@ -354,7 +354,6 @@
   cursor: pointer;
   text-transform: uppercase;
   letter-spacing: 2px;
-  animation: blink 1.5s steps(2, start) infinite;
   margin-top: 2rem;
 }
 
