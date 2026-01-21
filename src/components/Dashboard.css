@@ -4,17 +4,28 @@
   padding: 1rem;
   z-index: 100;
   position: relative;
-  min-height: 100vh;
+  height: 100vh; /* Fallback */
+  height: 100dvh; /* Dynamic viewport height for mobile browsers */
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+  padding-top: 1rem;
+  overflow: hidden; /* Prevent body scroll, keep scroll inside panels */
+}
+
+@media (max-width: 768px) {
+  .dashboard-container {
+    padding: 0;
+  }
 }
 
 .dashboard-grid {
   display: grid;
   grid-template-columns: 250px 1fr 250px;
   gap: 1.5rem;
-  /* height: calc(100vh - 150px); */
+  flex: 1; /* Grow to fill remaining space */
+  min-height: 0; /* Important for grid/flex nesting */
+  padding-bottom: 1rem;
 }
 
 .dashboard-grid.full-width-mode {
@@ -82,6 +93,8 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  height: 100%;
+  min-height: 0;
 }
 
 .terminal-output {
@@ -94,6 +107,18 @@
   min-height: 100px;
 }
 
+@media (max-width: 768px) {
+  .center-wrapper {
+    gap: 0;
+  }
+  .center-panel {
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0; /* Let it bleed to bottom */
+    border-radius: 0;
+  }
+}
+
 .blink-cursor:after {
   content: '_';
   animation: blink 1s infinite;
@@ -102,7 +127,8 @@
 @media (max-width: 1024px) {
   .dashboard-grid {
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 0;
+    height: 100%;
   }
   
   .side-panel {

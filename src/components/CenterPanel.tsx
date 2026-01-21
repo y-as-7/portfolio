@@ -196,29 +196,69 @@ const CenterPanel: Component<CenterPanelProps> = (props) => {
           </div>
         ) : isProjects() ? (
           <div class="start-screen-overlay projects-overlay">
-            <h1 class="game-title">MISSION SELECT</h1>
-
-            <div
-              class="projects-grid"
-              style="display: flex; justify-content: center; align-items: center; min-height: 200px;"
-            >
-              <div
-                class="project-card"
-                style="width: 100%; max-width: 500px; text-align: center; border: 4px double #33ff00;"
-              >
-                <div class="project-header" style="justify-content: center;">
-                  <span>SYSTEM MESSAGE</span>
+            <div class="projects-grid">
+              {[
+                {
+                  id: 1,
+                  title: "NEON_MARKET.EXE",
+                  version: "v2.4.0",
+                  desc: "Next-gen e-commerce platform featuring real-time inventory tracking, crypto payments, and AI-driven recommendations.",
+                  tech: ["Next.js", "TypeScript", "Stripe", "Prisma"],
+                  placeholder: "ECOMM_SYS",
+                },
+                {
+                  id: 2,
+                  title: "CYBER_CHAT.DAT",
+                  version: "v1.0.2",
+                  desc: "End-to-end encrypted messaging service with matrix protocol support and ephemeral data streams.",
+                  tech: ["React", "Socket.io", "Redis", "Node"],
+                  placeholder: "SECURE_MSG",
+                },
+                {
+                  id: 3,
+                  title: "TASK_FORCE.BAT",
+                  version: "v3.1.5",
+                  desc: "Collaborative project management tool designed for distributed teams with offline-first capabilities.",
+                  tech: ["Vue", "Firebase", "PWA", "Tailwind"],
+                  placeholder: "MGMT_TOOL",
+                },
+                {
+                  id: 4,
+                  title: "ZERO_GRAVITY.APP",
+                  version: "v0.9.beta",
+                  desc: "Physics simulation engine for web browsers utilizing WebAssembly for high-performance calculations.",
+                  tech: ["Rust", "WASM", "WebGL", "Three.js"],
+                  placeholder: "PHYS_ENG",
+                },
+              ].map((project) => (
+                <div class="project-card">
+                  <div class="project-header">
+                    <span class="project-title">{project.title}</span>
+                    <span class="project-version">{project.version}</span>
+                  </div>
+                  <div class="project-body">
+                    <div class="project-image-placeholder">
+                      <span>[{project.placeholder}]</span>
+                    </div>
+                    <p class="project-description">&gt; {project.desc}</p>
+                    <div class="tech-stack">
+                      {project.tech.map((t) => (
+                        <span class="tech-tag">{t}</span>
+                      ))}
+                    </div>
+                  </div>
+                  <button class="init-btn">&gt; INITIALIZE SYSTEM</button>
                 </div>
-                <div class="project-body" style="align-items: center;">
-                  <p
-                    class="blink-cursor"
-                    style="color: #33ff00; font-family: var(--font-body); font-size: 1.5rem; margin: 2rem 0;"
-                  >
-                    &gt; MISSIONS STILL PREPARING...
-                  </p>
-                </div>
-              </div>
+              ))}
             </div>
+
+            <button
+              class="game-btn blinking"
+              onClick={() => props.setView?.("home")}
+              style="margin: 2rem auto; display: block;"
+            >
+              &lt; RETURN TO BASE
+            </button>
           </div>
         ) : !isPlaying() ? (
           <div class="start-screen-overlay">
