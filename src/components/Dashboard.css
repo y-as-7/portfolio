@@ -168,9 +168,15 @@
     height: auto; /* Allow growth */
   }
 
-  .terminal-output,
-  .header-deco {
+  .center-wrapper .terminal-output,
+  .panel-header .header-deco {
     display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    pointer-events: none !important;
   }
 }
 

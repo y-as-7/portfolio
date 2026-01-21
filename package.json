@@ -9,8 +9,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@fontsource/press-start-2p": "^5.2.7",
-    "@fontsource/vt323": "^5.2.7",
     "solid-js": "^1.9.10"
   },
   "devDependencies": {

@@ -5,6 +5,9 @@ export default defineConfig({
   plugins: [solid()],
   build: {
     target: 'esnext',
+    minify: 'esbuild',
+    cssMinify: true,
+    sourcemap: false,
   },
   server: {
     host: '0.0.0.0',

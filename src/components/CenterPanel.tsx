@@ -104,7 +104,7 @@ const CenterPanel: Component<CenterPanelProps> = (props) => {
             ? "STATUS: ONLINE"
             : isProjects()
               ? "SELECT TARGET"
-              : "HIGH SCORE: 99999"}
+              : "HIGH SCORE: +99999"}
         </span>
       </div>
       <div class="game-viewport">
@@ -170,6 +170,7 @@ const CenterPanel: Component<CenterPanelProps> = (props) => {
                   <a
                     href="https://www.linkedin.com/in/youssef-askar-638531154/"
                     target="_blank"
+                    rel="noopener noreferrer"
                     class="game-btn"
                     style="font-size: 0.7rem; display: inline-block; margin-right: 1rem;"
                   >
@@ -178,6 +179,7 @@ const CenterPanel: Component<CenterPanelProps> = (props) => {
                   <a
                     href="https://github.com/y-as-7"
                     target="_blank"
+                    rel="noopener noreferrer"
                     class="game-btn"
                     style="font-size: 0.7rem; display: inline-block;"
                   >

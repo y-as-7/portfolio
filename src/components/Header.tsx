@@ -20,7 +20,12 @@ const Header: Component<HeaderProps> = (props) => {
         >
           PROJECTS
         </a>
-        <a href="https://github.com/y-as-7" target="_blank" class="retro-btn">
+        <a
+          href="https://github.com/y-as-7"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="retro-btn"
+        >
           GITHUB
         </a>
       </nav>
