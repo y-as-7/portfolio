@@ -13,9 +13,13 @@
   overflow: hidden; /* Prevent body scroll, keep scroll inside panels */
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .dashboard-container {
     padding: 0;
+    height: auto;
+    min-height: 100dvh;
+    overflow-y: auto;
+    overflow-x: hidden;
   }
 }
 

@@ -232,12 +232,20 @@
 }
 @media (max-width: 768px) {
   .start-screen-overlay {
+    position: relative; /* Changed from absolute to flow naturally */
+    height: auto;
+    min-height: 400px;
     justify-content: flex-start;
     padding-top: 2rem;
-    padding-bottom: 8rem; /* Large space to ensure bottom visibility */
-    overflow-y: scroll !important; /* Force scroll capability */
-    pointer-events: auto !important; /* Ensure touches register */
-    -webkit-overflow-scrolling: touch;
+    padding-bottom: 2rem;
+    overflow-y: visible !important; 
+    pointer-events: auto !important;
+  }
+  
+  .game-viewport {
+    height: auto;
+    min-height: 400px;
+    overflow: visible;
   }
 
   .center-panel {
@@ -399,6 +407,8 @@
 
 /* Projects Overlay */
 .projects-overlay {
+  position: relative; /* Added for mobile flow */
+  height: auto;
   display: flex !important;
   flex-direction: column;
   align-items: flex-start !important;
