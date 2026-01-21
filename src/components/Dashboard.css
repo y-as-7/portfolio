@@ -23,7 +23,7 @@
   }
   
   .dashboard-grid {
-    gap: 0;
+    gap: 1.5rem; /* Restored vertical gap for separation */
   }
 
   .retro-list {
@@ -137,6 +137,12 @@
     border-bottom: 0; /* Let it bleed to bottom */
     border-radius: 0;
   }
+  .terminal-output {
+    min-height: 120px;
+    height: auto;
+    padding-bottom: 3rem; /* Extra space for the input line */
+    margin-bottom: 2rem;
+  }
 }
 
 .blink-cursor:after {
@@ -147,7 +153,7 @@
 @media (max-width: 1024px) {
   .dashboard-grid {
     grid-template-columns: 1fr;
-    gap: 0;
+    gap: 1.5rem; /* Ensure gap covers this override too */
     height: 100%;
   }
   
@@ -159,26 +165,36 @@
 
   .center-wrapper {
     order: -1;
+    height: auto; /* Allow growth */
+  }
+
+  .terminal-output,
+  .header-deco {
+    display: none !important;
   }
 }
 
 /* CLI Input Styles */
 .input-line {
   display: flex;
-  align-items: center;
+  align-items: center; /* Changed to center for better consistency */
   gap: 0.5rem;
+  width: 100%;
 }
 
 .term-input {
   background: transparent;
   border: none;
-  font-family: var(--font-body); /* VT323 */
-  font-size: 1rem;
+  font-family: inherit;
+  font-size: inherit;
   color: #33ff00;
-  width: 100%;
+  flex: 1;
+  min-width: 0;
   outline: none;
-  caret-color: #33ff00;
-  line-height: 1.2;
+  padding: 0;
+  margin: 0;
+  height: 1.5rem; /* Explicit height */
+  line-height: 1.5rem;
 }
 
 .term-line {
