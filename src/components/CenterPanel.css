@@ -188,7 +188,6 @@
   content: '▶';
   position: absolute;
   left: -5px;
-  animation: blink 0.5s infinite;
   color: #33ff00;
 }
 
@@ -315,7 +314,7 @@
   letter-spacing: 0.15em;
   border-right: 0.15em solid orange; /* The cursor */
   width: 0;
-  animation: typing 2s steps(30, end) forwards, blink-caret 0.75s step-end infinite;
+  animation: typing 2s steps(30, end) forwards;
 }
 
 .retro-bio {
@@ -370,9 +369,9 @@
 .type-line-3 { animation: typing 2s steps(30, end) 4s forwards; }
 
 /* Hide cursor after typing is done for previous lines */
-.type-line-1 { animation: typing 2s steps(20, end) forwards, blink-caret 0.75s step-end 2.5; }
-.type-line-2 { animation: typing 2s steps(20, end) 2s forwards, blink-caret 0.75s step-end 2.5 2s; }
-.type-line-3 { animation: typing 2s steps(20, end) 4s forwards, blink-caret 0.75s step-end infinite 4s; }
+.type-line-1 { animation: typing 2s steps(20, end) forwards; }
+.type-line-2 { animation: typing 2s steps(20, end) 2s forwards; }
+.type-line-3 { animation: typing 2s steps(20, end) 4s forwards; }
 
 
 @keyframes typing {
