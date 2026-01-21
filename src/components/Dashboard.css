@@ -17,6 +17,10 @@
   /* height: calc(100vh - 150px); */
 }
 
+.dashboard-grid.full-width-mode {
+  grid-template-columns: 1fr;
+}
+
 .retro-list {
   list-style: none;
   padding: 0;
