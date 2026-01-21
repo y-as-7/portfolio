@@ -90,7 +90,6 @@
   color: #ff0055;
   text-shadow: 4px 4px 0 #fff;
   margin-bottom: 0.5rem; /* Reduced from 2rem */
-  animation: float 2s ease-in-out infinite;
   text-align: center;
   width: 100%;
 }
