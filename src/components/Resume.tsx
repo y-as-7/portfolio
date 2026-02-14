@@ -55,6 +55,12 @@ const Resume: Component = () => {
               Ingress, Kubernetes, Nginx, Agile (Scrum / Kanban)
             </p>
           </div>
+          <div class="skill-group">
+            <p>
+              <strong>Spoken Languages:</strong> Arabic (Native), English
+              (Fluent)
+            </p>
+          </div>
         </section>
 
         <section class="resume-section">
@@ -67,11 +73,17 @@ const Resume: Component = () => {
             <div class="item-subtitle">
               Direct Manager (Software Engineering)
             </div>
-            <p class="item-description">
-              Leading the development of high-performance financial systems and
-              enterprise solutions. Overseeing technical architecture and
-              multi-role operations.
-            </p>
+            <ul class="features-list">
+              <li>Scaled financial infrastructure to support +100k users</li>
+              <li>
+                Reduced core API response times by <strong>45%</strong> by
+                migrating legacy monoliths to Go-based microservices.
+              </li>
+              <li>
+                Optimized cloud infrastructure costs by <strong>20%</strong>{" "}
+                across AWS and Huawei Cloud environments.
+              </li>
+            </ul>
           </div>
 
           <div class="experience-item">
@@ -80,10 +92,21 @@ const Resume: Component = () => {
               <div class="item-date">Jan 2023 - Dec 2023</div>
             </div>
             <div class="item-subtitle">Team Lead (Full Stack)</div>
-            <p class="item-description">
-              Spearheaded development teams and architected scalable backend
-              systems for large-scale platforms.
-            </p>
+            <ul class="features-list">
+              <li>
+                Led a team of 8 developers to launch an enterprise ERP,
+                resulting in a <strong>30% improvement</strong> in operational
+                efficiency for industrial clients.
+              </li>
+              <li>
+                Implemented Agile/Scrum methodologies, reducing time-to-market
+                for new features by <strong>25%</strong>.
+              </li>
+              <li>
+                Architected a real-time notification system handling{" "}
+                <strong>100k+ events per minute</strong>.
+              </li>
+            </ul>
           </div>
 
           <div class="experience-item">
@@ -92,10 +115,20 @@ const Resume: Component = () => {
               <div class="item-date">Jan 2022 - Dec 2022</div>
             </div>
             <div class="item-subtitle">Backend Developer</div>
-            <p class="item-description">
-              Focused on API development, database optimization, and
-              implementing complex business logic.
-            </p>
+            <ul class="features-list">
+              <li>
+                Engineered the core backend for the national sports platform
+                (UAE Boxing), supporting <strong>1k+ active members</strong>.
+              </li>
+              <li>
+                Developed a high-performance news aggregation engine that
+                increased user content consumption by <strong>40%</strong>.
+              </li>
+              <li>
+                Maintained a <strong>99.9% transaction success rate</strong> for
+                integrated payment gateways and document verification workflows.
+              </li>
+            </ul>
           </div>
 
           <div class="experience-item">
@@ -104,10 +137,17 @@ const Resume: Component = () => {
               <div class="item-date">Jan 2021 - Present</div>
             </div>
             <div class="item-subtitle">Software Engineer (Mercenary)</div>
-            <p class="item-description">
-              Delivered custom software solutions and high-stakes technical
-              consulting for various clients.
-            </p>
+            <ul class="features-list">
+              <li>
+                Delivered custom SaaS solutions for <strong>15+ clients</strong>
+                , resulting in a cumulative <strong>150% ROI</strong> within 6
+                months.
+              </li>
+              <li>
+                Optimized database schemas for large-scale production data sets,
+                reducing storage and query costs by <strong>25%</strong>.
+              </li>
+            </ul>
           </div>
         </section>
 
@@ -148,10 +188,29 @@ const Resume: Component = () => {
 
         <section class="resume-section">
           <h2>PROFESSIONAL PROJECTS</h2>
+
+          <For each={projects.filter((p) => p.id === "invesier")}>
+            {(project) => (
+              <div class="project-item">
+                <div class="item-header">
+                  <div class="item-title">{project.name.toUpperCase()}</div>
+                </div>
+                <div class="item-subtitle">
+                  {project.tag} ({project.impact})
+                </div>
+                <p class="item-description">{project.description}</p>
+                <ul class="features-list">
+                  <For each={project.features.slice(0, 4)}>
+                    {(feature) => <li>{feature}</li>}
+                  </For>
+                </ul>
+              </div>
+            )}
+          </For>
+
           <div class="project-item">
             <div class="item-header">
               <div class="item-title">GRIDE</div>
-              <div class="item-date">Jan 2024 - Present</div>
             </div>
             <div class="item-subtitle">
               Mobile App & Admin Dashboard (Uber-like Platform)
@@ -172,7 +231,6 @@ const Resume: Component = () => {
           <div class="project-item">
             <div class="item-header">
               <div class="item-title">CARDO</div>
-              <div class="item-date">Jan 2023 - Dec 2023</div>
             </div>
             <div class="item-subtitle">
               IoT & Mobile App (Wearable Connectivity)
@@ -193,7 +251,6 @@ const Resume: Component = () => {
           <div class="project-item">
             <div class="item-header">
               <div class="item-title">GARMENT ERP</div>
-              <div class="item-date">Jan 2022 - Dec 2022</div>
             </div>
             <div class="item-subtitle">
               Enterprise ERP (Fashion Manufacturing)
@@ -211,12 +268,11 @@ const Resume: Component = () => {
             </ul>
           </div>
 
-          <For each={projects}>
+          <For each={projects.filter((p) => p.id !== "invesier")}>
             {(project) => (
               <div class="project-item">
                 <div class="item-header">
                   <div class="item-title">{project.name.toUpperCase()}</div>
-                  <div class="item-date">Ongoing</div>
                 </div>
                 <div class="item-subtitle">
                   {project.tag} ({project.impact})
