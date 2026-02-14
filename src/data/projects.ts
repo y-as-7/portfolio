@@ -257,5 +257,52 @@ export const projects: Project[] = [
       "SEO & Open Graph Optimization"
     ],
     variant: "regular"
+  },
+  {
+    id: "green-diamond-erp",
+    name: "green diamond system erp",
+    tag: "Enterprise ERP",
+    impact: "Unified Operations",
+    problem: "Managing complex industrial and financial ecosystems with fragmented tools leads to inefficiency and data loss.",
+    mission: "To provide an all-in-one, high-performance ERP solution that integrates storage, finance, HR, and sales into a single, secure digital fortress.",
+    vision: "A unified digital ecosystem where every organizational unit operates in perfect synchrony.",
+    story: "The Green Diamond System ERP was architected as the ultimate command center for modern enterprises. By consolidating disparate modules—from inventory management to financial statements—it ensures data integrity and operational peak performance.",
+    image: "/images/green_diamond_erp_dashboard.png",
+    blurhash: "LnHV6nWB2yk8pyo0adRj00WBngjc",
+    images: [
+      "/images/green_diamond_erp_dashboard.png",
+      "/images/nexus_scale.webp",
+      "/images/sentient_edge.webp"
+    ],
+    imageHashes: [
+      "LnHV6nWB2yk8pyo0adRj00WBngjc",
+      "LnHV6nWB2yk8pyo0adRj00WBngjc",
+      "LnHV6nWB2yk8pyo0adRj00WBngjc"
+    ],
+    description: "Advanced multi-module Enterprise Resource Planning system for holistic industrial and financial management.",
+    colors: { primary: "34, 197, 94", secondary: "16, 185, 129" },
+    features: [
+      "Dashboard & General Global Reports",
+      "Storage: Documents, Files & Warehouse Management",
+      "Organizations Mapping & Subsidiary Storages",
+      "Products, Inventories & Supply Chain",
+      "Suppliers & Cross-Warehouse Transfer Requests",
+      "Shield: High-Security Role-Based Access Controls",
+      "Product Categories & Main Inventory Oversight",
+      "Shipping Companies & Multimodal Logistics",
+      "Customers, Leads & Strategic Client Contracts",
+      "Sales Engine: Report Pages & Service Invoices",
+      "Accounts: Finance Statements & Daily Entries",
+      "Accounts Tree & Balance Sheet Analysis",
+      "Income Sheets & Performance Analytics",
+      "Human Resource: Attendance & Employee Records",
+      "Contracts, Departments & Personnel Requests",
+      "Task Management & Workflow Automation",
+      "Zone: Multilateral Country & Region Support",
+      "Advanced System Logs & Audit Trails",
+      "Modular Settings & Enterprise Configuration",
+      "Green Diamond Core Integration"
+    ],
+    variant: "featured"
   }
 ];
