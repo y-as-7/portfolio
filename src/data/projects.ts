@@ -24,7 +24,7 @@ export const projects: Project[] = [
   {
     id: "invesier",
     name: "invesier",
-    tag: "Mobile App",
+    tag: "Website, Desktop & Mobile App",
     impact: "1M+ Users",
     problem: "Invesier was founded in 2024 with a mission to democratize investment education and make financial literacy accessible to everyone.",
     journey: {
@@ -63,7 +63,8 @@ export const projects: Project[] = [
       website: "https://invesier.com"
     },
     features: [
-      "Virtual Investment Practice",
+      "Blockchain-Integrated Real-time Price Feed",
+      "Paper Trading",
       "Social Networking for Investors",
       "Educational Resources",
       "Competitive Ranking System",
@@ -94,7 +95,7 @@ export const projects: Project[] = [
   {
     id: "checkout-forex",
     name: "checkout forex",
-    tag: "Website",
+    tag: "Website & Admin Dashboard",
     impact: "10k+ Monthly Visitors",
     problem: "Connect with top-rated forex brokers, access real-time market data, and learn from expert insights to accelerate your trading success in the global financial markets.",
     image:  "/images/checkout_forex_hero.webp",

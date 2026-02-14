@@ -161,3 +161,9 @@ body {
     transform: translate3d(0, -200px, 0);
   }
 }
+
+@media print {
+  .scanlines, .starfield, .crt-flicker {
+    display: none !important;
+  }
+}
