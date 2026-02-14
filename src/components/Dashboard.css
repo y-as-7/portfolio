@@ -153,30 +153,23 @@
 @media (max-width: 1024px) {
   .dashboard-grid {
     grid-template-columns: 1fr;
-    gap: 1.5rem; /* Ensure gap covers this override too */
-    height: 100%;
+    gap: 1rem;
+    height: auto;
+    overflow-y: visible;
   }
   
   .side-panel {
-    max-height: none; /* Let them grow or keep as is? Image shows full lists */
-    /* max-height: 300px; */ 
-    height: auto; /* Allow auto height on mobile so lists don't scroll unnecessarily inside small boxes */
+    height: auto;
+    margin-bottom: 1rem;
   }
 
   .center-wrapper {
     order: -1;
-    height: auto; /* Allow growth */
+    height: auto;
   }
 
-  .center-wrapper .terminal-output,
-  .panel-header .header-deco {
+  .center-wrapper .terminal-output {
     display: none !important;
-    visibility: hidden !important;
-    opacity: 0 !important;
-    height: 0 !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    pointer-events: none !important;
   }
 }
 

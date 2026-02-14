@@ -105,9 +105,9 @@
   }
   
   .retro-btn {
-    padding: 0.3rem 0.5rem;
-    font-size: 0.6rem;
-    background: rgba(0, 20, 0, 0.5); /* Slight box to show clickability */
+    padding: 0.3rem 0.6rem;
+    font-size: 0.65rem;
+    background: rgba(0, 40, 0, 0.4); 
     border: 1px solid #1a8000;
   }
 

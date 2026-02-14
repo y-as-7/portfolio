@@ -79,9 +79,10 @@
   z-index: 10;
   color: white;
   text-shadow: 2px 2px 0 #000;
-  padding-bottom: 0;
+  padding: 0;
   overflow-y: auto; /* Enable scrolling for overlay content */
   -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  box-sizing: border-box;
 }
 
 .game-title {
@@ -129,9 +130,11 @@
 
 .terminal-stats-grid {
   display: grid;
-  grid-template-columns: repeat(3, 120px);
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   gap: 1.5rem;
   margin-top: 3rem;
+  width: 90%;
+  max-width: 500px;
 }
 
 .stat-item {
@@ -540,17 +543,79 @@
 }
 
 @media (max-width: 768px) {
+  .start-screen-overlay {
+    justify-content: flex-start;
+    padding: 2.5rem 1rem;
+    gap: 1.5rem;
+  }
+
+  .game-title {
+    font-size: 1.5rem;
+    margin-top: 0;
+    order: 2;
+  }
+
+  .terminal-decor-top, .terminal-decor-bottom {
+    position: static;
+    font-size: 0.55rem;
+    padding: 0.5rem 0;
+    width: 100%;
+    border: none;
+    background: rgba(0, 255, 0, 0.05);
+    margin: 0;
+  }
+
+  .terminal-decor-top { order: 1; border-bottom: 1px solid rgba(51, 255, 0, 0.2); }
+  .terminal-decor-bottom { order: 5; border-top: 1px solid rgba(51, 255, 0, 0.2); }
+
+  .hex-data {
+    display: none;
+  }
+
   .bio-box {
-    width: 95%;
-    font-size: 0.8rem;
-    padding: 0.8rem;
-    margin: 0.5rem 0 1rem 0; /* Tighter margins */
+    width: 90%;
+    padding: 1.2rem 1.5rem;
+    margin: 0;
+    order: 3;
     flex-shrink: 0;
   }
-  
+
+  .bio-corner {
+    width: 15px;
+    height: 15px;
+  }
+
+  .terminal-stats-grid {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+    margin-top: 0;
+    width: 100%;
+    order: 4;
+  }
+
+  .stat-item {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 255, 0, 0.03);
+    padding: 0.4rem 0.8rem;
+    border: 1px solid rgba(51, 255, 0, 0.1);
+  }
+
+  .stat-bar {
+    width: 100px;
+    margin: 0;
+  }
+
+  .stat-label {
+    font-size: 0.55rem;
+    margin: 0;
+  }
+
   .press-start-btn {
     font-size: 1rem;
-    margin-top: 0.5rem;
+    margin-top: 1rem;
+    order: 6;
   }
 }
 
