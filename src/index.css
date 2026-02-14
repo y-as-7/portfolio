@@ -20,18 +20,18 @@
 
 
 :root {
-  --color-bg: #050505;
-  --color-term: #33ff00;
-  --color-term-dim: #1a8000;
-  --color-accent: #00ffff;
-  --color-text: #e0e0e0;
-  --color-panel-bg: #000000;
-  --color-panel-border: #ffffff;
+  --color-bg: #0a0a0a;
+  --color-term: #4af626; /* Softer green */
+  --color-term-dim: #2e8b1d;
+  --color-accent: #00cccc;
+  --color-text: #d0d0d0;
+  --color-panel-bg: #050505;
+  --color-panel-border: #cccccc;
 
   --font-header: "Press Start 2P", cursive;
   --font-body: "VT323", monospace;
 
-  --scanline-color: rgba(18, 16, 16, 0.233);
+  --scanline-color: rgba(0, 0, 0, 0.12);
 }
 
 * {

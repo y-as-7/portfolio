@@ -1,5 +1,6 @@
 import { createSignal, createEffect, type Component } from "solid-js";
 import "./CenterPanel.css";
+import { projects } from "../data/projects";
 
 interface CenterPanelProps {
   view?: string;
@@ -14,11 +15,84 @@ const CenterPanel: Component<CenterPanelProps> = (props) => {
   const isAbout = () => props.view === "about";
 
   const [activeModule, setActiveModule] = createSignal<string | null>(null);
+  const [currentProjectIndex, setCurrentProjectIndex] = createSignal(0);
+  const [showingDetails, setShowingDetails] = createSignal(false);
+  const [activeImageIndex, setActiveImageIndex] = createSignal<number | null>(
+    null,
+  );
+
+  const nextProject = () => {
+    setCurrentProjectIndex((prev) => (prev + 1) % projects.length);
+  };
+
+  const prevProject = () => {
+    setCurrentProjectIndex((prev) =>
+      prev === 0 ? projects.length - 1 : prev - 1,
+    );
+  };
+
+  const allProjectImages = () => {
+    const p = projects[currentProjectIndex()];
+    return [...p.images, ...(p.desktopImages || [])];
+  };
+
+  const nextImage = () => {
+    const images = allProjectImages();
+    setActiveImageIndex((prev) =>
+      prev === null ? 0 : (prev + 1) % images.length,
+    );
+  };
+
+  const prevImage = () => {
+    const images = allProjectImages();
+    setActiveImageIndex((prev) =>
+      prev === null ? 0 : prev === 0 ? images.length - 1 : prev - 1,
+    );
+  };
 
   createEffect(() => {
     if (props.view === "about") {
       setIsPlaying(false);
       setActiveModule(null);
+    }
+
+    if (props.view === "projects") {
+      let lastScrollTime = 0;
+      const scrollThreshold = 500; // ms
+
+      const handleWheel = (e: WheelEvent) => {
+        if (showingDetails()) return; // Disable scroll nav when in details
+        const now = Date.now();
+        if (now - lastScrollTime < scrollThreshold) return;
+
+        if (e.deltaY > 0) {
+          nextProject();
+          lastScrollTime = now;
+        } else if (e.deltaY < 0) {
+          prevProject();
+          lastScrollTime = now;
+        }
+      };
+
+      const handleKeyDown = (e: KeyboardEvent) => {
+        if (activeImageIndex() !== null) {
+          if (e.key === "ArrowRight") nextImage();
+          if (e.key === "ArrowLeft") prevImage();
+          if (e.key === "Escape") setActiveImageIndex(null);
+          return;
+        }
+        if (showingDetails()) return; // Disable keyboard nav when in details
+        if (e.key === "ArrowRight" || e.key === "ArrowDown") nextProject();
+        if (e.key === "ArrowLeft" || e.key === "ArrowUp") prevProject();
+      };
+
+      window.addEventListener("keydown", handleKeyDown);
+      window.addEventListener("wheel", handleWheel, { passive: true });
+
+      return () => {
+        window.removeEventListener("keydown", handleKeyDown);
+        window.removeEventListener("wheel", handleWheel);
+      };
     }
   });
 
@@ -97,7 +171,9 @@ const CenterPanel: Component<CenterPanelProps> = (props) => {
             ? "CONTACT_ME.EXE"
             : isProjects()
               ? "MISSIONS.BAT"
-              : "SKILLS.NES"}
+              : isAbout()
+                ? "ABOUT.EXE"
+                : "SKILLS.NES"}
         </span>
         <span>
           {isContact()
@@ -137,56 +213,39 @@ const CenterPanel: Component<CenterPanelProps> = (props) => {
           </div>
         ) : isAbout() ? (
           <div class="start-screen-overlay about-overlay">
-            <h1 class="game-title">PLAYER PROFILE</h1>
             <div class="about-container">
               <div class="about-section">
                 <h3>&gt; IDENTITY:</h3>
-                <p>YOUSSEF ASKAR // SOFTWARE ENGINEER</p>
-              </div>
-              <div class="about-section">
-                <h3>&gt; SKILLS:</h3>
-                <p>
-                  WEB (FRONT/BACK) . DEVOPS . DESKTOP APPS . ELECTRON . DOCKER .
-                  KUBERNETES
+                <p>Youssef Askar // Software Engineer</p>
+                <p style="font-size: 1.1rem; margin-top: 0.5rem; color: #aaa;">
+                  Architect of digital realms. I don't just write functions; I
+                  craft experiences that resonate. Driven by insatiable
+                  curiosity and a commitment to excellence.
                 </p>
               </div>
               <div class="about-section">
                 <h3>&gt; CAREER LOG:</h3>
-                <p>STARTED: FREELANCE MERCENARY</p>
-                <p>JOINED: RIZME SOFTWARE (BACKEND DEV)</p>
-                <p>LEVELED UP: TBS (TEAM LEAD)</p>
-                <p>MAXIMIZED: REYADA CAPITAL (DIRECT MANAGER)</p>
+                <p>Started: Freelance Mercenary</p>
+                <p>Joined: Rizme Software (Backend Dev)</p>
+                <p>Leveled Up: TBS (Team Lead)</p>
+                <p>Maximized: Reyada Capital (Direct Manager)</p>
+              </div>
+              <div class="about-section">
+                <h3>&gt; PASSION:</h3>
+                <p>
+                  Scalable architectures, revolutionizing digital commerce, and
+                  the retro-futuristic aesthetics of the early internet. I live
+                  for the "aha!" moment of a complex bug resolved.
+                </p>
               </div>
               <div class="about-section highlight">
                 <h3>&gt; MISSION FOCUS:</h3>
                 <p>
-                  BRIDGING TECH & BUSINESS. EXPERT IN REQUIREMENTS ANALYSIS &
-                  CLIENT RELATIONS.
+                  Bridging tech & business. Expert in requirements analysis &
+                  client relations.
                 </p>
               </div>
-              <div class="about-section">
-                <h3>&gt; COMS:</h3>
-                <div class="about-links">
-                  <a
-                    href="https://www.linkedin.com/in/youssef-askar-638531154/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="game-btn"
-                    style="font-size: 0.7rem; display: inline-block; margin-right: 1rem;"
-                  >
-                    LINKEDIN
-                  </a>
-                  <a
-                    href="https://github.com/y-as-7"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="game-btn"
-                    style="font-size: 0.7rem; display: inline-block;"
-                  >
-                    GITHUB
-                  </a>
-                </div>
-              </div>
+
               <button
                 class="game-btn blinking"
                 onClick={() => props.setView?.("home")}
@@ -198,69 +257,141 @@ const CenterPanel: Component<CenterPanelProps> = (props) => {
           </div>
         ) : isProjects() ? (
           <div class="start-screen-overlay projects-overlay">
-            <div class="projects-grid">
-              {[
-                {
-                  id: 1,
-                  title: "NEON_MARKET.EXE",
-                  version: "v2.4.0",
-                  desc: "Next-gen e-commerce platform featuring real-time inventory tracking, crypto payments, and AI-driven recommendations.",
-                  tech: ["Next.js", "TypeScript", "Stripe", "Prisma"],
-                  placeholder: "ECOMM_SYS",
-                },
-                {
-                  id: 2,
-                  title: "CYBER_CHAT.DAT",
-                  version: "v1.0.2",
-                  desc: "End-to-end encrypted messaging service with matrix protocol support and ephemeral data streams.",
-                  tech: ["React", "Socket.io", "Redis", "Node"],
-                  placeholder: "SECURE_MSG",
-                },
-                {
-                  id: 3,
-                  title: "TASK_FORCE.BAT",
-                  version: "v3.1.5",
-                  desc: "Collaborative project management tool designed for distributed teams with offline-first capabilities.",
-                  tech: ["Vue", "Firebase", "PWA", "Tailwind"],
-                  placeholder: "MGMT_TOOL",
-                },
-                {
-                  id: 4,
-                  title: "ZERO_GRAVITY.APP",
-                  version: "v0.9.beta",
-                  desc: "Physics simulation engine for web browsers utilizing WebAssembly for high-performance calculations.",
-                  tech: ["Rust", "WASM", "WebGL", "Three.js"],
-                  placeholder: "PHYS_ENG",
-                },
-              ].map((project) => (
-                <div class="project-card">
-                  <div class="project-header">
-                    <span class="project-title">{project.title}</span>
-                    <span class="project-version">{project.version}</span>
-                  </div>
-                  <div class="project-body">
-                    <div class="project-image-placeholder">
-                      <span>[{project.placeholder}]</span>
-                    </div>
-                    <p class="project-description">&gt; {project.desc}</p>
-                    <div class="tech-stack">
-                      {project.tech.map((t) => (
-                        <span class="tech-tag">{t}</span>
-                      ))}
-                    </div>
-                  </div>
-                  <button class="init-btn">&gt; INITIALIZE SYSTEM</button>
-                </div>
-              ))}
-            </div>
+            <div class="project-navigator">
+              <div class="navigator-header">
+                <span class="mission-status-label">MISSION_LOG</span>
+                <span class="mission-counter">
+                  [ {currentProjectIndex() + 1} / {projects.length} ]
+                </span>
+              </div>
 
-            <button
-              class="game-btn blinking"
-              onClick={() => props.setView?.("home")}
-              style="margin: 2rem auto; display: block;"
-            >
-              &lt; RETURN TO BASE
-            </button>
+              <div class="project-card single-view">
+                {showingDetails() ? (
+                  <div class="project-details-expanded">
+                    <div class="details-nav">
+                      <button
+                        class="game-btn sm"
+                        onClick={() => setShowingDetails(false)}
+                      >
+                        &lt; CLOSE_LOG
+                      </button>
+                      <span class="details-id">
+                        LOG::{projects[currentProjectIndex()].id.toUpperCase()}
+                      </span>
+                    </div>
+
+                    <div class="details-content">
+                      <div class="details-section">
+                        <h4>// MISSION_STORY</h4>
+                        <p>
+                          {projects[currentProjectIndex()].story ||
+                            projects[currentProjectIndex()].description}
+                        </p>
+                      </div>
+
+                      <div class="details-row">
+                        <div class="details-section half">
+                          <h4>// OBJECTIVE</h4>
+                          <p>
+                            {projects[currentProjectIndex()].mission ||
+                              projects[currentProjectIndex()].problem}
+                          </p>
+                        </div>
+                        <div class="details-section half">
+                          <h4>// VISION</h4>
+                          <p>
+                            {projects[currentProjectIndex()].vision ||
+                              "Classified"}
+                          </p>
+                        </div>
+                      </div>
+
+                      <div class="details-section">
+                        <h4>// DATA_VISUALS</h4>
+                        <div class="details-gallery">
+                          {projects[currentProjectIndex()].images.map(
+                            (img: string, idx: number) => (
+                              <div
+                                class="gallery-item"
+                                onClick={() => setActiveImageIndex(idx)}
+                              >
+                                <img src={img} alt="Mission Screenshot" />
+                              </div>
+                            ),
+                          )}
+                          {projects[currentProjectIndex()].desktopImages?.map(
+                            (img: string, idx: number) => (
+                              <div
+                                class="gallery-item desktop"
+                                onClick={() =>
+                                  setActiveImageIndex(
+                                    idx +
+                                      projects[currentProjectIndex()].images
+                                        .length,
+                                  )
+                                }
+                              >
+                                <img
+                                  src={img}
+                                  alt="Desktop Mission Screenshot"
+                                />
+                              </div>
+                            ),
+                          )}
+                        </div>
+                      </div>
+
+                      <div class="details-section">
+                        <h4>// SYSTEM_FEATURES</h4>
+                        <div class="tech-stack expanded">
+                          {projects[currentProjectIndex()].features.map(
+                            (f: string) => (
+                              <span class="tech-tag">{f}</span>
+                            ),
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ) : (
+                  <>
+                    <div class="project-header">
+                      <span class="project-title">
+                        {projects[currentProjectIndex()].name.toUpperCase()}
+                      </span>
+                      <span class="project-version">
+                        {projects[currentProjectIndex()].tag}
+                      </span>
+                    </div>
+                    <div class="project-body">
+                      <div class="project-image-container">
+                        <img
+                          src={projects[currentProjectIndex()].image}
+                          alt={projects[currentProjectIndex()].name}
+                          class="project-image"
+                        />
+                      </div>
+                      <p class="project-description">
+                        &gt; {projects[currentProjectIndex()].description}
+                      </p>
+                      <div class="tech-stack">
+                        {projects[currentProjectIndex()].features
+                          .slice(0, 6)
+                          .map((f: string) => (
+                            <span class="tech-tag">{f}</span>
+                          ))}
+                      </div>
+                    </div>
+                    <button
+                      class="init-btn"
+                      onClick={() => setShowingDetails(true)}
+                    >
+                      &gt; INITIALIZE SYSTEM
+                    </button>
+                  </>
+                )}
+              </div>
+            </div>
           </div>
         ) : !isPlaying() ? (
           <div class="start-screen-overlay">
@@ -343,6 +474,49 @@ const CenterPanel: Component<CenterPanelProps> = (props) => {
           </div>
         )}
       </div>
+
+      {activeImageIndex() !== null && (
+        <div class="lightbox-overlay" onClick={() => setActiveImageIndex(null)}>
+          <button
+            class="lightbox-close"
+            onClick={() => setActiveImageIndex(null)}
+          >
+            &times;
+          </button>
+
+          <button
+            class="lightbox-nav prev"
+            onClick={(e) => {
+              e.stopPropagation();
+              prevImage();
+            }}
+          >
+            &lt;
+          </button>
+
+          <div class="lightbox-content" onClick={(e) => e.stopPropagation()}>
+            <img
+              src={allProjectImages()[activeImageIndex()!]}
+              alt="Full Resolution Mission Data"
+              class="lightbox-image"
+            />
+            <div class="lightbox-caption">
+              [ SCREENSHOT_{activeImageIndex()! + 1} /{" "}
+              {allProjectImages().length} ]
+            </div>
+          </div>
+
+          <button
+            class="lightbox-nav next"
+            onClick={(e) => {
+              e.stopPropagation();
+              nextImage();
+            }}
+          >
+            &gt;
+          </button>
+        </div>
+      )}
     </div>
   );
 };

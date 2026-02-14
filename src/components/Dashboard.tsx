@@ -73,9 +73,9 @@ const Dashboard: Component = () => {
       <Header currentView={currentView()} setView={setCurrentView} />
 
       <div
-        class={`dashboard-grid ${currentView() === "projects" ? "full-width-mode" : ""}`}
+        class={`dashboard-grid ${currentView() === "projects" || currentView() === "about" ? "full-width-mode" : ""}`}
       >
-        {currentView() !== "projects" && (
+        {currentView() !== "projects" && currentView() !== "about" && (
           <SidePanel title="LANGUAGES" className="left-panel">
             <ul class="retro-list">
               <li>
@@ -155,7 +155,7 @@ const Dashboard: Component = () => {
           )}
         </div>
 
-        {currentView() !== "projects" && (
+        {currentView() !== "projects" && currentView() !== "about" && (
           <SidePanel title="FRAMEWORKS" className="right-panel">
             <div class="panel-header-small">FULLSTACK</div>
             <ul class="retro-list">
