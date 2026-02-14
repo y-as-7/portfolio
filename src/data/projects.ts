@@ -118,6 +118,9 @@ export const projects: Project[] = [
     ],
     description: "Professional forex broker comparison platform with real-time market data and educational resources.",
     colors: { primary: "14, 165, 233", secondary: "6, 182, 212" },
+    links: {
+      website: "https://checkoutforex.com"
+    },
     features: [
       "Professional Admin Dashboard (Filament 4)",
       "Advanced Content Management System",

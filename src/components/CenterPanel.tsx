@@ -8,8 +8,6 @@ interface CenterPanelProps {
 }
 
 const CenterPanel: Component<CenterPanelProps> = (props) => {
-  const [isPlaying, setIsPlaying] = createSignal(false);
-
   const isContact = () => props.view === "contact";
   const isProjects = () => props.view === "projects";
   const isAbout = () => props.view === "about";
@@ -52,7 +50,6 @@ const CenterPanel: Component<CenterPanelProps> = (props) => {
 
   createEffect(() => {
     if (props.view === "about") {
-      setIsPlaying(false);
       setActiveModule(null);
     }
 
@@ -351,6 +348,51 @@ const CenterPanel: Component<CenterPanelProps> = (props) => {
                           )}
                         </div>
                       </div>
+
+                      {projects[currentProjectIndex()].links && (
+                        <div class="details-section">
+                          <h4>// EXTERNAL_COMMS</h4>
+                          <div class="details-links">
+                            {projects[currentProjectIndex()].links?.website && (
+                              <a
+                                href={
+                                  projects[currentProjectIndex()].links?.website
+                                }
+                                target="_blank"
+                                class="game-link"
+                              >
+                                &gt; INITIALIZE_WEB_ACCESS
+                              </a>
+                            )}
+                            {projects[currentProjectIndex()].links
+                              ?.appStore && (
+                              <a
+                                href={
+                                  projects[currentProjectIndex()].links
+                                    ?.appStore
+                                }
+                                target="_blank"
+                                class="game-link"
+                              >
+                                &gt; APP_STORE_UPLINK
+                              </a>
+                            )}
+                            {projects[currentProjectIndex()].links
+                              ?.googlePlay && (
+                              <a
+                                href={
+                                  projects[currentProjectIndex()].links
+                                    ?.googlePlay
+                                }
+                                target="_blank"
+                                class="game-link"
+                              >
+                                &gt; PLAY_STORE_UPLINK
+                              </a>
+                            )}
+                          </div>
+                        </div>
+                      )}
                     </div>
                   </div>
                 ) : (
@@ -395,50 +437,59 @@ const CenterPanel: Component<CenterPanelProps> = (props) => {
               </div>
             </div>
           </div>
-        ) : !isPlaying() ? (
-          <div class="start-screen-overlay">
-            <h1 class="game-title">CODE WARRIOR</h1>
-
-            <div class="bio-box">
-              <p class="type-line-1">SOFTWARE ENGINEER</p>
-              <p class="type-line-2">WEB . BACKEND . DEVOPS</p>
-              <div class="scan-line-decor"></div>
-              <p class="type-line-3">TECH & BUSINESS SOLUTIONS</p>
-            </div>
-
-            <div class="menu-selection">
-              <button
-                class="press-start-btn"
-                onClick={() => setIsPlaying(true)}
-              >
-                PRESS START
-              </button>
-            </div>
-          </div>
         ) : (
           <div class="game-play-area">
             {activeModule() === null ? (
-              <div class="modules-grid">
-                <button
-                  class="module-btn"
-                  onClick={() => setActiveModule("MISSIONS")}
-                >
-                  <span class="icon">📜</span> MISSION_LOGS
-                </button>
-                <button
-                  class="module-btn"
-                  onClick={() => setActiveModule("SERVICES")}
-                >
-                  <span class="icon">💎</span> SERVICES_OFFER
-                </button>
-                <button
-                  class="module-btn"
-                  onClick={() => setActiveModule("TROPHIES")}
-                >
-                  <span class="icon">🏆</span> TROPHIES_ACH
-                </button>
-                <div class="dialog-box typing-effect" style="margin-top: 2rem;">
-                  <p>&gt; SELECT A SYSTEM TO INSPECT...</p>
+              <div class="start-screen-overlay">
+                <div class="terminal-decor-top">
+                  <span class="status-indicator">● SYSTEM_CORE: ONLINE</span>
+                  <span class="hex-data">
+                    0x77 0x61 0x72 0x72 0x69 0x6F 0x72
+                  </span>
+                </div>
+
+                <h1 class="game-title">CODE WARRIOR</h1>
+
+                <div class="bio-box">
+                  <div class="bio-corner t-l"></div>
+                  <div class="bio-corner t-r"></div>
+                  <div class="bio-corner b-l"></div>
+                  <div class="bio-corner b-r"></div>
+                  <p class="type-line-1">
+                    SOFTWARE<span class="terminal-cursor"></span>
+                  </p>
+                  <div class="scan-line-decor"></div>
+                </div>
+
+                <div class="terminal-stats-grid">
+                  <div class="stat-item">
+                    <span class="stat-label">CPU_LOAD</span>
+                    <div class="stat-bar">
+                      <div class="stat-fill pulse" style="width: 78%"></div>
+                    </div>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">MEM_SYNC</span>
+                    <div class="stat-bar">
+                      <div class="stat-fill" style="width: 45%"></div>
+                    </div>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">SIGNAL_STAB</span>
+                    <div class="stat-bar">
+                      <div
+                        class="stat-fill pulse-fast"
+                        style="width: 92%"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="terminal-decor-bottom">
+                  <span class="protocol-label">
+                    UPLINK_PROTOCOL: v5.2.0-secure
+                  </span>
+                  <span class="encryption-label">AES-256-GCM_ENCRYPTED</span>
                 </div>
               </div>
             ) : (
