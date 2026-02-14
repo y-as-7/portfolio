@@ -376,9 +376,11 @@ const CenterPanel: Component<CenterPanelProps> = (props) => {
                       </p>
                       <div class="tech-stack">
                         {projects[currentProjectIndex()].features
-                          .slice(0, 6)
+                          .slice(0, 5)
                           .map((f: string) => (
-                            <span class="tech-tag">{f}</span>
+                            <span class="tech-tag">
+                              {f.length > 25 ? f.slice(0, 25) + "..." : f}
+                            </span>
                           ))}
                       </div>
                     </div>

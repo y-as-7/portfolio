@@ -271,13 +271,9 @@ export const projects: Project[] = [
     blurhash: "LnHV6nWB2yk8pyo0adRj00WBngjc",
     images: [
       "/images/green_diamond_erp_dashboard.png",
-      "/images/nexus_scale.webp",
-      "/images/sentient_edge.webp"
     ],
     imageHashes: [
       "LnHV6nWB2yk8pyo0adRj00WBngjc",
-      "LnHV6nWB2yk8pyo0adRj00WBngjc",
-      "LnHV6nWB2yk8pyo0adRj00WBngjc"
     ],
     description: "Advanced multi-module Enterprise Resource Planning system for holistic industrial and financial management.",
     colors: { primary: "34, 197, 94", secondary: "16, 185, 129" },
