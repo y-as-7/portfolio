@@ -21,12 +21,13 @@ const Resume: Component = () => {
         <section class="resume-section">
           <h2>PROFESSIONAL SUMMARY</h2>
           <p>
-            Dedicated and innovative Software Engineer with extensive experience
-            in architecting and developing high-performance web and mobile
-            applications. Proven track record in building complex ecosystems,
-            from national sport management platforms to enterprise-grade ERP
-            systems and social investment platforms. Expertise in Laravel,
-            React, TypeScript, and Microservices architecture.
+            Senior Software Engineer dedicated to architecting and building
+            scalable, high-performance applications from the ground up.
+            Expertise in designing robust system architectures, optimizing
+            backend efficiency, and leading technical teams to deliver
+            excellence in complex environments. Passionate about engineering
+            well-structured, maintainable codebases that drive long-term
+            success.
           </p>
         </section>
 
@@ -34,25 +35,26 @@ const Resume: Component = () => {
           <h2>TECHNICAL SKILLS</h2>
           <div class="skill-group">
             <p>
-              <strong>Languages:</strong> Bash (SH), CSS, Go (GO), JavaScript
-              (JS), PHP, Python (PY), SQL, TypeScript (TS)
+              <strong>Languages:</strong> <strong>Golang (Go)</strong>,
+              TypeScript (TS), PHP, Python (PY), SQL, Bash (SH), CSS, JavaScript
+              (JS)
             </p>
           </div>
           <div class="skill-group">
             <p>
-              <strong>Frameworks:</strong> Electron, Express.js, Fiber, Gin,
-              gRPC, Laravel, NestJS, Next.js, React, Tailwind CSS, Vue.js
+              <strong>Frameworks:</strong> Fiber, Gin, gRPC, NestJS, Next.js,
+              React, Laravel, Tailwind CSS, Vue.js, Electron, Express.js
             </p>
           </div>
           <div class="skill-group">
             <p>
-              <strong>Databases:</strong> MySQL, PostgreSQL, Prisma, Redis, SQLx
+              <strong>Databases:</strong> PostgreSQL, MySQL, Redis, SQLx, Prisma
             </p>
           </div>
           <div class="skill-group">
             <p>
-              <strong>DevOps & Tools:</strong> Amazon AWS, Docker, Huawei Cloud,
-              Ingress, Kubernetes, Nginx, Agile (Scrum / Kanban)
+              <strong>DevOps & Tools:</strong> Amazon AWS, Docker, Kubernetes,
+              Huawei Cloud, Ingress, Nginx, Agile (Scrum / Kanban)
             </p>
           </div>
           <div class="skill-group">
@@ -74,14 +76,21 @@ const Resume: Component = () => {
               Direct Manager (Software Engineering)
             </div>
             <ul class="features-list">
-              <li>Scaled financial infrastructure to support +100k users</li>
               <li>
-                Reduced core API response times by <strong>45%</strong> by
-                migrating legacy monoliths to Go-based microservices.
+                Led the development of a new financial platform (Invesier)
+                <strong>from scratch</strong>, utilizing <strong>Golang</strong>
+                to create scalable microservices, resulting in a
+                <strong>45% increase</strong> in transaction efficiency.
               </li>
               <li>
-                Optimized cloud infrastructure costs by <strong>20%</strong>{" "}
-                across AWS and Huawei Cloud environments.
+                Scaled financial infrastructure to support
+                <strong>1M+ active users</strong>, ensuring high availability
+                and fault tolerance.
+              </li>
+              <li>
+                Optimized cloud infrastructure costs by <strong>20%</strong>
+                across AWS and Huawei Cloud environments through efficient
+                resource orchestration.
               </li>
             </ul>
           </div>
@@ -89,22 +98,23 @@ const Resume: Component = () => {
           <div class="experience-item">
             <div class="item-header">
               <div class="item-title">TBS</div>
-              <div class="item-date">Jan 2023 - Dec 2023</div>
+              <div class="item-date">Jan 2024 - Dec 2025</div>
             </div>
             <div class="item-subtitle">Team Lead (Full Stack)</div>
             <ul class="features-list">
               <li>
-                Led a team of 8 developers to launch an enterprise ERP,
-                resulting in a <strong>30% improvement</strong> in operational
-                efficiency for industrial clients.
+                Architected and built an enterprise ERP system
+                <strong>from scratch</strong> for industrial clients, improving
+                operational efficiency by <strong>30%</strong>.
               </li>
               <li>
-                Implemented Agile/Scrum methodologies, reducing time-to-market
-                for new features by <strong>25%</strong>.
+                Led a team of 8 developers in an Agile environment, reducing
+                time-to-market for critical modules by <strong>25%</strong>.
               </li>
               <li>
-                Architected a real-time notification system handling{" "}
-                <strong>100k+ events per minute</strong>.
+                Designed a real-time notification engine handling
+                <strong>100k+ events per minute</strong> using event-driven
+                architecture.
               </li>
             </ul>
           </div>
@@ -112,21 +122,23 @@ const Resume: Component = () => {
           <div class="experience-item">
             <div class="item-header">
               <div class="item-title">Rizme Software</div>
-              <div class="item-date">Jan 2022 - Dec 2022</div>
+              <div class="item-date">Jan 2023 - Dec 2024</div>
             </div>
             <div class="item-subtitle">Backend Developer</div>
             <ul class="features-list">
               <li>
                 Engineered the core backend for the national sports platform
-                (UAE Boxing), supporting <strong>1k+ active members</strong>.
+                (UAE Boxing) <strong>from the ground up</strong>, supporting
+                <strong>1k+ active members</strong>.
+              </li>
+              <li>
+                Integrated secure payment gateways and document verification
+                workflows, achieving a
+                <strong>99.9% transaction success rate</strong>.
               </li>
               <li>
                 Developed a high-performance news aggregation engine that
-                increased user content consumption by <strong>40%</strong>.
-              </li>
-              <li>
-                Maintained a <strong>99.9% transaction success rate</strong> for
-                integrated payment gateways and document verification workflows.
+                increased user engagement by <strong>40%</strong>.
               </li>
             </ul>
           </div>
@@ -139,9 +151,9 @@ const Resume: Component = () => {
             <div class="item-subtitle">Software Engineer (Mercenary)</div>
             <ul class="features-list">
               <li>
-                Delivered custom SaaS solutions for <strong>15+ clients</strong>
-                , resulting in a cumulative <strong>150% ROI</strong> within 6
-                months.
+                Delivered custom <strong>E-commerce</strong> and SaaS solutions
+                for <strong>15+ clients</strong>, driving a cumulative
+                <strong>150% ROI</strong> within 6 months.
               </li>
               <li>
                 Optimized database schemas for large-scale production data sets,
@@ -195,9 +207,7 @@ const Resume: Component = () => {
                 <div class="item-header">
                   <div class="item-title">{project.name.toUpperCase()}</div>
                 </div>
-                <div class="item-subtitle">
-                  {project.tag} ({project.impact})
-                </div>
+                <div class="item-subtitle">{project.tag}</div>
                 <p class="item-description">{project.description}</p>
                 <ul class="features-list">
                   <For each={project.features.slice(0, 4)}>
@@ -274,9 +284,7 @@ const Resume: Component = () => {
                 <div class="item-header">
                   <div class="item-title">{project.name.toUpperCase()}</div>
                 </div>
-                <div class="item-subtitle">
-                  {project.tag} ({project.impact})
-                </div>
+                <div class="item-subtitle">{project.tag}</div>
                 <p class="item-description">{project.description}</p>
                 <ul class="features-list">
                   <For each={project.features.slice(0, 4)}>

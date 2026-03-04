@@ -2,7 +2,6 @@ export interface Project {
   id: string;
   name: string;
   tag: string;
-  impact: string;
   problem: string;
   journey?: { title: string; subtitle: string };
   mission?: string;
@@ -25,7 +24,6 @@ export const projects: Project[] = [
     id: "invesier",
     name: "invesier",
     tag: "Website, Desktop & Mobile App",
-    impact: "1M+ Users",
     problem: "Invesier was founded in 2024 with a mission to democratize investment education and make financial literacy accessible to everyone.",
     journey: {
       title: "Our Journey to Redefine Social Connections",
@@ -96,7 +94,6 @@ export const projects: Project[] = [
     id: "checkout-forex",
     name: "checkout forex",
     tag: "Website & Admin Dashboard",
-    impact: "10k+ Monthly Visitors",
     problem: "Connect with top-rated forex brokers, access real-time market data, and learn from expert insights to accelerate your trading success in the global financial markets.",
     image:  "/images/checkout_forex_hero.webp",
     blurhash: "LGF5?^Y7%M%Mvp%M_3j[?^%M%M%M",
@@ -183,7 +180,6 @@ export const projects: Project[] = [
       "Article Publishing System",
       "Featured Content Management",
       "Reading Time Calculation",
-      "View Count Tracking",
       "Content Categorization",
       "Tag Management System",
       "Database Migration System",
@@ -204,7 +200,6 @@ export const projects: Project[] = [
     id: "uae-boxing-federation",
     name: "uae boxing federation",
     tag: "Website",
-    impact: "1k+ Members",
     problem: "The official digital ecosystem for the UAE Boxing Federation, managing national champions, tournaments, and a multi-role athletic community with 1k+ members.",
     image: "/images/uae_boxing_hero.webp",
     blurhash: "LnHV6nWB2yk8pyo0adRj00WBngjc",
@@ -266,7 +261,6 @@ export const projects: Project[] = [
     id: "green-diamond-erp",
     name: "green diamond system erp",
     tag: "Enterprise ERP",
-    impact: "Unified Operations",
     problem: "Managing complex industrial and financial ecosystems with fragmented tools leads to inefficiency and data loss.",
     mission: "To provide an all-in-one, high-performance ERP solution that integrates storage, finance, HR, and sales into a single, secure digital fortress.",
     vision: "A unified digital ecosystem where every organizational unit operates in perfect synchrony.",

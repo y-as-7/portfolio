@@ -215,9 +215,10 @@ const CenterPanel: Component<CenterPanelProps> = (props) => {
                 <h3>&gt; IDENTITY:</h3>
                 <p>Youssef Askar // Software Engineer</p>
                 <p style="font-size: 1.1rem; margin-top: 0.5rem; color: #aaa;">
-                  Architect of digital realms. I don't just write functions; I
-                  craft experiences that resonate. Driven by insatiable
-                  curiosity and a commitment to excellence.
+                  Architect of scalable digital systems. I specialize in
+                  crafting well-architected applications that balance
+                  performance with maintainability. Driven by a commitment to
+                  engineering excellence and technical innovation.
                 </p>
               </div>
               <div class="about-section">
@@ -230,9 +231,9 @@ const CenterPanel: Component<CenterPanelProps> = (props) => {
               <div class="about-section">
                 <h3>&gt; PASSION:</h3>
                 <p>
-                  Scalable architectures, revolutionizing digital commerce, and
-                  the retro-futuristic aesthetics of the early internet. I live
-                  for the "aha!" moment of a complex bug resolved.
+                  Designing robust architectures, solving high-concurrency
+                  challenges, and the art of clean, scalable code. I live for
+                  the "aha!" moment of an elegant architectural solution.
                 </p>
               </div>
               <div class="about-section highlight">
