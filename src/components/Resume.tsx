@@ -9,7 +9,7 @@ const Resume: Component = () => {
         <header class="resume-header">
           <h1>Youssef Askar</h1>
           <div class="contact-info">
-            <p>Dubai, UAE • youssefaskar111@outlook.com • +971 56 658 0292</p>
+            <p>Mansoura, Egypt • youssefaskar111@outlook.com • +20 110 481 4728</p>
             <p>
               <a href="https://portfolio-chi-sable-56.vercel.app/">
                 portfolio-chi-sable-56.vercel.app
@@ -80,17 +80,17 @@ const Resume: Component = () => {
                 Led the development of a new financial platform (Invesier)
                 <strong>from scratch</strong>, utilizing <strong>Golang</strong>
                 to create scalable microservices, resulting in a
-                <strong>45% increase</strong> in transaction efficiency.
+                <strong>significant increase</strong> in transaction efficiency.
               </li>
               <li>
                 Scaled financial infrastructure to support
-                <strong>1M+ active users</strong>, ensuring high availability
+                <strong>a massive global user base</strong>, ensuring high availability
                 and fault tolerance.
               </li>
               <li>
-                Optimized cloud infrastructure costs by <strong>20%</strong>
+                Optimized cloud infrastructure costs
                 across AWS and Huawei Cloud environments through efficient
-                resource orchestration.
+                <strong>resource orchestration</strong>.
               </li>
             </ul>
           </div>
@@ -104,17 +104,15 @@ const Resume: Component = () => {
             <ul class="features-list">
               <li>
                 Architected and built an enterprise ERP system
-                <strong>from scratch</strong> for industrial clients, improving
-                operational efficiency by <strong>30%</strong>.
+                <strong>from scratch</strong> for industrial clients, <strong>significantly</strong> improving
+                operational efficiency.
               </li>
               <li>
-                Led a team of 8 developers in an Agile environment, reducing
-                time-to-market for critical modules by <strong>25%</strong>.
+                Led a <strong>team of developers</strong> in an Agile environment, <strong>significantly</strong> reducing
+                time-to-market for critical modules.
               </li>
               <li>
-                Designed a real-time notification engine handling
-                <strong>100k+ events per minute</strong> using event-driven
-                architecture.
+                Managed <strong>VPS infrastructure</strong> and automated <strong>application deployments</strong>, ensuring stability and seamless release cycles.
               </li>
             </ul>
           </div>
@@ -127,19 +125,10 @@ const Resume: Component = () => {
             <div class="item-subtitle">Backend Developer</div>
             <ul class="features-list">
               <li>
-                Architected a microservices-based <strong>streaming platform</strong> using <strong>Go and Kubernetes</strong>, capable of handling high-concurrency boxing events.
-              </li>
-              <li>
-                Reduced video delivery latency by <strong>40%</strong> through the implementation of a multi-tier <strong>MediaMTX</strong> origin-edge cluster and <strong>BunnyCDN</strong> integration.
-              </li>
-              <li>
-                Automated infrastructure provisioning using <strong>Terraform</strong>, ensuring environment parity between local development, staging, and production.
-              </li>
-              <li>
                 Developed a custom <strong>Laravel 12</strong> admin dashboard with <strong>Filament v3</strong> for real-time management of boxing federations, players, and live events.
               </li>
               <li>
-                Implemented a resilient transactional email system using <strong>Go workers</strong> and <strong>Redis queues</strong> to handle user onboarding and payment confirmations.
+                Built responsive and interactive frontend interfaces using <strong>React</strong>, integrated within the Laravel ecosystem.
               </li>
             </ul>
           </div>
@@ -153,12 +142,11 @@ const Resume: Component = () => {
             <ul class="features-list">
               <li>
                 Delivered custom <strong>E-commerce</strong> and SaaS solutions
-                for <strong>15+ clients</strong>, driving a cumulative
-                <strong>150% ROI</strong> within 6 months.
+                for <strong>numerous clients</strong>, driving <strong>substantial ROI</strong>.
               </li>
               <li>
                 Optimized database schemas for large-scale production data sets,
-                reducing storage and query costs by <strong>25%</strong>.
+                <strong>substantially</strong> reducing storage and query costs.
               </li>
             </ul>
           </div>
@@ -166,22 +154,6 @@ const Resume: Component = () => {
 
         <section class="resume-section">
           <h2>EDUCATION</h2>
-          <div class="experience-item">
-            <div class="item-header">
-              <div class="item-title">
-                Bachelor of Computer Science (In Progress)
-              </div>
-              <div class="item-date">Jan 2021 - Present</div>
-            </div>
-            <div class="item-subtitle">
-              Elite University of Technology in Navigation Science and Space
-              Tech
-            </div>
-            <p class="item-description">
-              Specialized focus on high-performance computing and complex
-              systems within the navigation and aerospace domains.
-            </p>
-          </div>
 
           <div class="experience-item">
             <div class="item-header">

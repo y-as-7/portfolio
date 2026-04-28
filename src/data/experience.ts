@@ -21,7 +21,7 @@ export const experiences: Experience[] = [
     description: [
       "Architected and built an enterprise ERP system from scratch for industrial clients, significantly improving operational efficiency.",
       "Led a team of developers in an Agile environment, drastically reducing time-to-market for critical modules.",
-      "Designed a high-throughput real-time notification engine using event-driven architecture."
+      "Managed VPS infrastructure and automated application deployments, ensuring environment stability and seamless release cycles."
     ],
     skills: ["Full Stack", "Agile Leadership", "Event-Driven Architecture", "Enterprise Apps"]
   },
@@ -31,13 +31,10 @@ export const experiences: Experience[] = [
     company: "Rizme Software",
     date: "Jan 2023 - Dec 2024",
     description: [
-      "Architected a microservices-based streaming platform using Go and Kubernetes, capable of handling high-concurrency boxing events.",
-      "Reduced video delivery latency by 40% through the implementation of a multi-tier MediaMTX origin-edge cluster and BunnyCDN integration.",
-      "Automated infrastructure provisioning using Terraform, ensuring environment parity between local development, staging, and production.",
       "Developed a custom Laravel 12 admin dashboard with Filament v3 for real-time management of boxing federations, players, and live events.",
-      "Implemented a resilient transactional email system using Go workers and Redis queues to handle user onboarding and payment confirmations."
+      "Built responsive and interactive frontend interfaces using React, integrated within the Laravel ecosystem for a seamless administrative experience."
     ],
-    skills: ["Go", "Kubernetes", "Terraform", "MediaMTX", "BunnyCDN", "Stripe API", "Redis"]
+    skills: ["Laravel", "React", "Filament", "PHP", "MySQL", "PostgreSQL"]
   },
   {
     id: "freelance",
