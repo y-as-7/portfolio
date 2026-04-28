@@ -17,21 +17,48 @@ export interface Project {
   links?: { appStore?: string; googlePlay?: string; website?: string };
   features: string[];
   variant: "featured" | "regular";
+  hidden?: boolean;
 }
 
 export const projects: Project[] = [
   {
+    id: "boxing-streaming-platform",
+    name: "Boxing Streaming Platform",
+    tag: "Live-Streaming Platform & Cloud Infrastructure",
+    problem: "Architected and developed a high-performance, scalable live-streaming platform dedicated to boxing events. The system supports multi-bitrate HLS delivery, secure Pay-Per-View (PPV) transactions, and global content distribution, serving thousands of concurrent viewers with low latency.",
+    image: "/images/boxing_streaming_hero.png",
+    blurhash: "L007N*j[00ay00j[00ay00j[00ay",
+    images: ["/images/boxing_streaming_hero.png"],
+    imageHashes: ["L007N*j[00ay00j[00ay00j[00ay"],
+    description: "Scalable live-streaming platform with multi-bitrate HLS delivery, secure Stripe PPV, and global distribution.",
+    colors: { primary: "239, 68, 68", secondary: "185, 28, 28" },
+    features: [
+      "Scalable MediaMTX Origin/Edge Architecture",
+      "Automated FFmpeg Multi-bitrate Transcoding (720p, 480p, Source)",
+      "BunnyCDN Integration with Pull-zone Optimization",
+      "Secure Stripe PPV & Subscription Payment Pipeline",
+      "Huawei Cloud CCE (Kubernetes) Deployment",
+      "Infrastructure as Code using Terraform",
+      "Reactive SolidJS Frontend with hls.js & TanStack Query",
+      "Low-latency Go (Fiber) & MySQL REST API",
+      "Redis Session Management & State Locking",
+      "Automated CI/CD Pipeline (Docker & SWR)"
+    ],
+    variant: "featured",
+    hidden: true
+  },
+  {
     id: "invesier",
     name: "invesier",
     tag: "Website, Desktop & Mobile App",
-    problem: "Invesier was founded in 2024 with a mission to democratize investment education and make financial literacy accessible to everyone.",
+    problem: "Invesier was founded with a mission to democratize investment education and make financial literacy accessible to everyone.",
     journey: {
       title: "Our Journey to Redefine Social Connections",
       subtitle: "From sharing simple posts to building vibrant networks, discover how our platform is transforming the way people connect, engage, and grow together."
     },
     mission: "At Invesier, we believe that financial education should be engaging, practical, and accessible to everyone. Our mission is to break down the barriers to investment education and create a new generation of confident, knowledgeable investors.",
     vision: "At Invesier, we make financial education fun, social, and hands-on. Through gamified learning, virtual trading, and a vibrant community, users gain real-world investing skills in an engaging, risk-free environment.",
-    story: "Invesier was founded in 2024 with a mission to democratize investment education and make financial literacy accessible to everyone. We recognized that traditional financial education often fails to engage learners and lacks practical application.\n\nOur platform bridges this gap by providing a comprehensive environment where users can learn investment concepts, practice strategies using virtual currency, and connect with a community of like-minded individuals.\n\nThrough our innovative approach combining education, social networking, and gamification, we're building the future of financial education and empowering the next generation of confident investors.",
+    story: "Invesier was founded with a mission to democratize investment education and make financial literacy accessible to everyone. We recognized that traditional financial education often fails to engage learners and lacks practical application.\n\nOur platform bridges this gap by providing a comprehensive environment where users can learn investment concepts, practice strategies using virtual currency, and connect with a community of like-minded individuals.\n\nThrough our innovative approach combining education, social networking, and gamification, we're building the future of financial education and empowering the next generation of confident investors.",
     image: "/images/invesier_battle_ai.webp",
     blurhash: "L007N*j[00ay00j[00ay00j[00ay",
     images: [
@@ -200,7 +227,7 @@ export const projects: Project[] = [
     id: "uae-boxing-federation",
     name: "uae boxing federation",
     tag: "Website",
-    problem: "The official digital ecosystem for the UAE Boxing Federation, managing national champions, tournaments, and a multi-role athletic community with 1k+ members.",
+    problem: "The official digital ecosystem for the UAE Boxing Federation, managing national champions, tournaments, and a multi-role athletic community with a rapidly growing membership base.",
     image: "/images/uae_boxing_hero.webp",
     blurhash: "LnHV6nWB2yk8pyo0adRj00WBngjc",
     images: [

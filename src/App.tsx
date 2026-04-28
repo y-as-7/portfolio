@@ -1,55 +1,49 @@
 import { type Component, createSignal, Show } from "solid-js";
-import Dashboard from "./components/Dashboard";
-import Resume from "./components/Resume";
+import Header from "./components/layout/Header";
+import Hero from "./components/sections/Hero";
+import About from "./components/sections/About";
+import Experience from "./components/sections/Experience";
+import Projects from "./components/sections/Projects";
+import Contact from "./components/sections/Contact";
+import Resume from "./components/Resume"; 
+import ProjectDetails from "./components/ProjectDetails";
+import { projects } from "./data/projects";
+
+import "./styles/sections.css"; // Ensure sections CSS is loaded
 
 const App: Component = () => {
-  const [showResume, setShowResume] = createSignal(false);
+  const [currentRoute, setCurrentRoute] = createSignal(window.location.hash);
 
-  // Simple "routing" based on hash or state
   window.addEventListener("hashchange", () => {
-    setShowResume(window.location.hash === "#cv");
+    setCurrentRoute(window.location.hash);
   });
 
-  // Initial check
-  if (window.location.hash === "#cv") {
-    setShowResume(true);
-  }
+  const activeProject = () => {
+    const route = currentRoute();
+    if (route.startsWith("#project/")) {
+      const id = route.split("#project/")[1];
+      return projects.find(p => p.id === id) || null;
+    }
+    return null;
+  };
 
   return (
     <>
-      <div class="scanlines"></div>
-      <div class="starfield"></div>
-
-      <Show when={!showResume()}>
-        <Dashboard />
-        <div
-          class="no-print"
-          style={{
-            position: "fixed",
-            bottom: "20px",
-            right: "20px",
-            "z-index": 1000,
-          }}
-        >
-          <a
-            href="#cv"
-            style={{
-              padding: "10px 20px",
-              background: "rgba(0, 255, 0, 0.2)",
-              border: "1px solid #0f0",
-              color: "#0f0",
-              "text-decoration": "none",
-              "border-radius": "4px",
-              "font-family": "monospace",
-              "backdrop-filter": "blur(5px)",
-            }}
-          >
-            ATS CV
-          </a>
-        </div>
+      <Show when={!currentRoute().startsWith("#cv") && !activeProject()}>
+        <Header />
+        <main>
+          <Hero />
+          <About />
+          <Experience />
+          <Projects />
+          <Contact />
+        </main>
+        <footer style="text-align: center; padding: 2rem; color: var(--text-muted); font-size: 0.9rem; font-family: monospace;">
+          <p>Designed & Built by Youssef Askar</p>
+        </footer>
       </Show>
 
-      <Show when={showResume()}>
+      <Show when={currentRoute().startsWith("#cv")}>
         <Resume />
         <div
           class="no-print"
@@ -64,17 +58,26 @@ const App: Component = () => {
             href="#"
             style={{
               padding: "10px 20px",
-              background: "#000",
-              border: "1px solid #333",
-              color: "#fff",
+              background: "#0a0a0b",
+              border: "1px solid #27272a",
+              color: "#fafafa",
               "text-decoration": "none",
               "border-radius": "4px",
-              "font-family": "monospace",
+              "font-family": "var(--font-sans)",
             }}
           >
             ← Back to Portfolio
           </a>
         </div>
+      </Show>
+
+      <Show when={activeProject()}>
+        {(project) => (
+          <ProjectDetails 
+            project={project()} 
+            onBack={() => { window.location.hash = "#projects"; }} 
+          />
+        )}
       </Show>
     </>
   );

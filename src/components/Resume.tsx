@@ -42,19 +42,19 @@ const Resume: Component = () => {
           </div>
           <div class="skill-group">
             <p>
-              <strong>Frameworks:</strong> Fiber, Gin, gRPC, NestJS, Next.js,
-              React, Laravel, Tailwind CSS, Vue.js, Electron, Express.js
+              <strong>Frameworks:</strong> Fiber, Gin, gRPC, SolidJS, NestJS, Next.js,
+              React, Laravel, Tailwind CSS, TanStack Query, hls.js, Express.js
             </p>
           </div>
           <div class="skill-group">
             <p>
-              <strong>Databases:</strong> PostgreSQL, MySQL, Redis, SQLx, Prisma
+              <strong>Databases:</strong> PostgreSQL, MySQL (TaurusDB), Redis (DCS), SQLx, Prisma
             </p>
           </div>
           <div class="skill-group">
             <p>
-              <strong>DevOps & Tools:</strong> Amazon AWS, Docker, Kubernetes,
-              Huawei Cloud, Ingress, Nginx, Agile (Scrum / Kanban)
+              <strong>DevOps & Tools:</strong> Docker, Kubernetes, Terraform,
+              Huawei Cloud (CCE/SWR), MediaMTX, BunnyCDN, Amazon AWS, Nginx
             </p>
           </div>
           <div class="skill-group">
@@ -127,18 +127,19 @@ const Resume: Component = () => {
             <div class="item-subtitle">Backend Developer</div>
             <ul class="features-list">
               <li>
-                Engineered the core backend for the national sports platform
-                (UAE Boxing) <strong>from the ground up</strong>, supporting
-                <strong>1k+ active members</strong>.
+                Architected a microservices-based <strong>streaming platform</strong> using <strong>Go and Kubernetes</strong>, capable of handling high-concurrency boxing events.
               </li>
               <li>
-                Integrated secure payment gateways and document verification
-                workflows, achieving a
-                <strong>99.9% transaction success rate</strong>.
+                Reduced video delivery latency by <strong>40%</strong> through the implementation of a multi-tier <strong>MediaMTX</strong> origin-edge cluster and <strong>BunnyCDN</strong> integration.
               </li>
               <li>
-                Developed a high-performance news aggregation engine that
-                increased user engagement by <strong>40%</strong>.
+                Automated infrastructure provisioning using <strong>Terraform</strong>, ensuring environment parity between local development, staging, and production.
+              </li>
+              <li>
+                Developed a custom <strong>Laravel 12</strong> admin dashboard with <strong>Filament v3</strong> for real-time management of boxing federations, players, and live events.
+              </li>
+              <li>
+                Implemented a resilient transactional email system using <strong>Go workers</strong> and <strong>Redis queues</strong> to handle user onboarding and payment confirmations.
               </li>
             </ul>
           </div>
