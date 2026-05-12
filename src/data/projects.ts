@@ -88,12 +88,11 @@ export const projects: Project[] = [
       website: "https://invesier.com"
     },
     features: [
-      "Blockchain-Integrated Real-time Price Feed",
-      "Paper Trading",
-      "Social Networking for Investors",
+      "Live Video Streaming, Event Bus & WebSockets",
+      "Blockchain-Integrated Real-time Price Feeds",
+      "Social Networking & Virtual Paper Trading",
+      "Competitive Ranking & Live Battles",
       "Educational Resources",
-      "Competitive Ranking System",
-      "Live Investment Battles",
       "Real-time Trading Competition",
       "Interactive Gifting & Rewards",
       "Comment & Reply System",
@@ -278,6 +277,7 @@ export const projects: Project[] = [
       "Advanced Micro-animations for Premium UX",
       "Professional Admin Dashboard (Filament 4)",
       "Spatie Media Library for Asset Management",
+      "Automated FFmpeg Video Processing & Transcoding",
       "JSON-based Translatable Content Architecture",
       "Laravel 12 High-Performance Core",
       "SEO & Open Graph Optimization"

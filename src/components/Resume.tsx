@@ -9,9 +9,9 @@ const Resume: Component = () => {
         <header class="resume-header">
           <h1>Youssef Askar</h1>
           <div class="contact-info">
-            <p>Mansoura, Egypt • youssefaskar111@outlook.com • +20 110 481 4728</p>
+            <p>Mansoura, Egypt • +20 110 481 4728 • <a href="mailto:youssefaskar111@outlook.com">youssefaskar111@outlook.com</a></p>
             <p>
-              <a href="https://portfolio-chi-sable-56.vercel.app/">
+              <a href="https://portfolio-chi-sable-56.vercel.app/" target="_blank" rel="noopener noreferrer">
                 portfolio-chi-sable-56.vercel.app
               </a>
             </p>
@@ -35,9 +35,8 @@ const Resume: Component = () => {
           <h2>TECHNICAL SKILLS</h2>
           <div class="skill-group">
             <p>
-              <strong>Languages:</strong> <strong>Golang (Go)</strong>,
-              TypeScript (TS), PHP, Python (PY), SQL, Bash (SH), CSS, JavaScript
-              (JS)
+              <strong>Languages:</strong> <strong>Golang</strong>,
+              TypeScript, PHP, Python, SQL, Bash, CSS, JavaScript
             </p>
           </div>
           <div class="skill-group">
@@ -48,19 +47,18 @@ const Resume: Component = () => {
           </div>
           <div class="skill-group">
             <p>
-              <strong>Databases:</strong> PostgreSQL, MySQL (TaurusDB), Redis (DCS), SQLx, Prisma
+              <strong>Databases:</strong> PostgreSQL, MySQL, Redis, SQLx, Prisma
             </p>
           </div>
           <div class="skill-group">
             <p>
               <strong>DevOps & Tools:</strong> Docker, Kubernetes, Terraform,
-              Huawei Cloud (CCE/SWR), MediaMTX, BunnyCDN, Amazon AWS, Nginx
+              Huawei Cloud, MediaMTX, Cloudflare Stream, BunnyCDN, Amazon AWS, Nginx
             </p>
           </div>
           <div class="skill-group">
             <p>
-              <strong>Spoken Languages:</strong> Arabic (Native), English
-              (Fluent)
+              <strong>Spoken Languages:</strong> Arabic, English
             </p>
           </div>
         </section>
@@ -77,20 +75,13 @@ const Resume: Component = () => {
             </div>
             <ul class="features-list">
               <li>
-                Led the development of a new financial platform (Invesier)
-                <strong>from scratch</strong>, utilizing <strong>Golang</strong>
-                to create scalable microservices, resulting in a
-                <strong>significant increase</strong> in transaction efficiency.
+                Led the development of a new financial platform (Invesier) <strong>from scratch</strong>, utilizing <strong>Golang</strong> to create scalable microservices, resulting in a <strong>significant increase</strong> in transaction efficiency.
               </li>
               <li>
-                Scaled financial infrastructure to support
-                <strong>a massive global user base</strong>, ensuring high availability
-                and fault tolerance.
+                Scaled financial infrastructure to support <strong>a massive global user base</strong>, ensuring high availability and fault tolerance.
               </li>
               <li>
-                Optimized cloud infrastructure costs
-                across AWS and Huawei Cloud environments through efficient
-                <strong>resource orchestration</strong>.
+                Optimized cloud infrastructure costs across AWS and Huawei Cloud environments through efficient <strong>resource orchestration</strong>.
               </li>
             </ul>
           </div>
@@ -103,13 +94,10 @@ const Resume: Component = () => {
             <div class="item-subtitle">Team Lead (Full Stack)</div>
             <ul class="features-list">
               <li>
-                Architected and built an enterprise ERP system
-                <strong>from scratch</strong> for industrial clients, <strong>significantly</strong> improving
-                operational efficiency.
+                Architected and built an enterprise ERP system <strong>from scratch</strong> for industrial clients, <strong>significantly</strong> improving operational efficiency.
               </li>
               <li>
-                Led a <strong>team of developers</strong> in an Agile environment, <strong>significantly</strong> reducing
-                time-to-market for critical modules.
+                Led a <strong>team of developers</strong> in an Agile environment, <strong>significantly</strong> reducing time-to-market for critical modules.
               </li>
               <li>
                 Managed <strong>VPS infrastructure</strong> and automated <strong>application deployments</strong>, ensuring stability and seamless release cycles.
@@ -141,12 +129,10 @@ const Resume: Component = () => {
             <div class="item-subtitle">Software Engineer (Mercenary)</div>
             <ul class="features-list">
               <li>
-                Delivered custom <strong>E-commerce</strong> and SaaS solutions
-                for <strong>numerous clients</strong>, driving <strong>substantial ROI</strong>.
+                Delivered custom <strong>E-commerce</strong> and SaaS solutions for <strong>numerous clients</strong>, driving <strong>substantial ROI</strong>.
               </li>
               <li>
-                Optimized database schemas for large-scale production data sets,
-                <strong>substantially</strong> reducing storage and query costs.
+                Optimized database schemas for large-scale production data sets, <strong>substantially</strong> reducing storage and query costs.
               </li>
             </ul>
           </div>
