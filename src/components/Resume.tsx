@@ -25,13 +25,14 @@ const Resume: Component = () => {
         <section class="resume-section">
           <h2>SUMMARY</h2>
           <p>
-            Senior Software Engineer dedicated to architecting and building
-            scalable, high-performance applications from the ground up.
-            Expertise in designing robust system architectures, optimizing
-            backend efficiency, and leading technical teams to deliver
-            excellence in complex environments. Passionate about engineering
-            well-structured, maintainable codebases that drive long-term
-            success.
+            Senior Software Engineer with 5+ years of experience architecting
+            and building scalable, high-performance applications using Golang,
+            TypeScript, and cloud-native technologies. Proven expertise in
+            microservices architecture, RESTful API design, CI/CD pipeline
+            automation, and leading agile engineering teams. Track record of
+            delivering enterprise-grade fintech and ERP systems from scratch,
+            optimizing backend efficiency, and driving measurable business
+            impact across cloud infrastructure.
           </p>
         </section>
 
@@ -45,7 +46,7 @@ const Resume: Component = () => {
           </div>
           <div class="skill-group">
             <p>
-              <strong>Frameworks:</strong> Fiber, Gin, gRPC, SolidJS, NestJS, Next.js,
+              <strong>Frameworks & APIs:</strong> Fiber, Gin, gRPC, REST APIs, SolidJS, NestJS, Next.js,
               React, Laravel, Tailwind CSS, TanStack Query, hls.js, Express.js
             </p>
           </div>
@@ -56,13 +57,19 @@ const Resume: Component = () => {
           </div>
           <div class="skill-group">
             <p>
-              <strong>DevOps & Tools:</strong> Docker, Kubernetes, Terraform,
-              Huawei Cloud, MediaMTX, Cloudflare Stream, BunnyCDN, Amazon AWS, Nginx, GitHub Actions, CI/CD Pipelines
+              <strong>DevOps & Tools:</strong> Docker, Kubernetes, Terraform, Git,
+              GitHub Actions, CI/CD Pipelines, Huawei Cloud, Amazon AWS, Nginx,
+              MediaMTX, Cloudflare Stream, BunnyCDN
             </p>
           </div>
           <div class="skill-group">
             <p>
-              <strong>AI Tools:</strong> Claude Code, GitHub Copilot, ChatGPT, Antigravity — leveraged with automation tools to accelerate development workflows and boost productivity
+              <strong>Methodologies:</strong> Microservices Architecture, Agile/Scrum, RESTful Design, Clean Architecture, TDD, System Design
+            </p>
+          </div>
+          <div class="skill-group">
+            <p>
+              <strong>AI & Automation Tools:</strong> Claude Code, GitHub Copilot, ChatGPT, Antigravity — leveraged to accelerate development workflows and boost productivity
             </p>
           </div>
           <div class="skill-group">
@@ -80,7 +87,7 @@ const Resume: Component = () => {
               <div class="item-date">Jan 2024 - Present</div>
             </div>
             <div class="item-subtitle">
-              Direct Manager (Software Engineering)
+              Engineering Manager / Senior Software Engineer
             </div>
             <ul class="features-list">
               <li>
@@ -152,14 +159,14 @@ const Resume: Component = () => {
 
           <div class="experience-item">
             <div class="item-header">
-              <div class="item-title">Self-Directed Study & Autonomous Learning</div>
+              <div class="item-title">Self-Taught Software Engineer</div>
               <div class="item-date">2018 - Present</div>
             </div>
             <div class="item-subtitle">
-              Specialization in Full Stack Software Engineering
+              Full Stack Software Engineering — Independent Study
             </div>
             <p class="item-description">
-              Mastered modern software architecture, distributed systems, and full-stack development through rigorous study of official documentation, industry-standard practices, and extensive open-source contribution.
+              Mastered software architecture, distributed systems, microservices, cloud infrastructure, and full-stack development through official documentation, industry-standard practices, and open-source contribution.
             </p>
           </div>
         </section>
