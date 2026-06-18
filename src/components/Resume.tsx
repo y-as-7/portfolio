@@ -8,18 +8,22 @@ const Resume: Component = () => {
       <div class="resume-container">
         <header class="resume-header">
           <h1>Youssef Askar</h1>
+          <p class="resume-title">Senior Software Engineer</p>
           <div class="contact-info">
-            <p>Mansoura, Egypt • +20 110 481 4728 • <a href="mailto:youssefaskar111@outlook.com">youssefaskar111@outlook.com</a></p>
             <p>
-              <a href="https://portfolio-chi-sable-56.vercel.app/" target="_blank" rel="noopener noreferrer">
-                portfolio-chi-sable-56.vercel.app
-              </a>
+              Mansoura, Egypt • +20 110 481 4728 • 
+              <a href="mailto:youssefaskar111@outlook.com">youssefaskar111@outlook.com</a>
+            </p>
+            <p>
+              <a href="https://linkedin.com/in/youssef-askar-023a02251" target="_blank" rel="noopener noreferrer">linkedin.com/in/youssef-askar-023a02251</a> • 
+              <a href="https://github.com/y-as-7" target="_blank" rel="noopener noreferrer">github.com/y-as-7</a> • 
+              <a href="https://portfolio-chi-sable-56.vercel.app/" target="_blank" rel="noopener noreferrer">portfolio-chi-sable-56.vercel.app</a>
             </p>
           </div>
         </header>
 
         <section class="resume-section">
-          <h2>PROFESSIONAL SUMMARY</h2>
+          <h2>SUMMARY</h2>
           <p>
             Senior Software Engineer dedicated to architecting and building
             scalable, high-performance applications from the ground up.
@@ -32,7 +36,7 @@ const Resume: Component = () => {
         </section>
 
         <section class="resume-section">
-          <h2>TECHNICAL SKILLS</h2>
+          <h2>SKILLS</h2>
           <div class="skill-group">
             <p>
               <strong>Languages:</strong> <strong>Golang</strong>,
@@ -53,7 +57,12 @@ const Resume: Component = () => {
           <div class="skill-group">
             <p>
               <strong>DevOps & Tools:</strong> Docker, Kubernetes, Terraform,
-              Huawei Cloud, MediaMTX, Cloudflare Stream, BunnyCDN, Amazon AWS, Nginx
+              Huawei Cloud, MediaMTX, Cloudflare Stream, BunnyCDN, Amazon AWS, Nginx, GitHub Actions, CI/CD Pipelines
+            </p>
+          </div>
+          <div class="skill-group">
+            <p>
+              <strong>AI Tools:</strong> Claude Code, GitHub Copilot, ChatGPT, Antigravity — leveraged with automation tools to accelerate development workflows and boost productivity
             </p>
           </div>
           <div class="skill-group">
@@ -64,7 +73,7 @@ const Resume: Component = () => {
         </section>
 
         <section class="resume-section">
-          <h2>WORK EXPERIENCE</h2>
+          <h2>EXPERIENCE</h2>
           <div class="experience-item">
             <div class="item-header">
               <div class="item-title">Reyada Capital</div>
@@ -143,22 +152,20 @@ const Resume: Component = () => {
 
           <div class="experience-item">
             <div class="item-header">
-              <div class="item-title">Autonomous Learning</div>
-              <div class="item-date">Continuous</div>
+              <div class="item-title">Self-Directed Study & Autonomous Learning</div>
+              <div class="item-date">2018 - Present</div>
             </div>
             <div class="item-subtitle">
-              Self-Learner (Full Stack Development)
+              Specialization in Full Stack Software Engineering
             </div>
             <p class="item-description">
-              Expertly navigated and mastered various technologies through
-              rigorous self-directed study across global documentation,
-              technical forums, and open-source communities.
+              Mastered modern software architecture, distributed systems, and full-stack development through rigorous study of official documentation, industry-standard practices, and extensive open-source contribution.
             </p>
           </div>
         </section>
 
         <section class="resume-section">
-          <h2>PROFESSIONAL PROJECTS</h2>
+          <h2>PROJECTS</h2>
 
           <For each={projects.filter((p) => p.id === "invesier")}>
             {(project) => (
