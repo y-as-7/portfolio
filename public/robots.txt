@@ -1,4 +1,13 @@
 User-agent: *
 Allow: /
+Crawl-delay: 10
+
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 5
 
 Sitemap: https://portfolio-chi-sable-56.vercel.app/sitemap.xml
